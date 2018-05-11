@@ -1,0 +1,187 @@
+* {
+   font-family: "Arial", "Liberation Sans";
+
+}
+
+html {
+   padding: 1em;
+   background-color: black;
+}
+
+.centrage {text-align: center; }
+.gras {font-weight: bold; }
+.sous-lignage {text-decoration: underline; }
+
+body {
+   margin-left: auto;
+   margin-right: auto;
+   max-width: 95%;
+}
+
+#cadre-gallerie {
+   margin-left: auto;
+   margin-right: auto;
+   background-color: #222222;
+   text-align: center;
+   border: solid #444444;
+   border-width: 0em 0em 0.1em 0em;
+}
+
+#import-et-retour {
+   margin-left: auto;
+   margin-right: auto;
+   background-color: #222222;
+   text-align: right;
+   border: solid #444444;
+   border-width: 0.1em 0em;
+}
+
+h1, h2, h3 {
+   font-weight: lighter;
+   color: #dddddd;
+}
+h1 { font-size: 2.5vw }
+h2 { font-size: 2.0vw }
+h3 { font-size: 1.5vw }
+
+table {
+   margin-left: auto;
+   margin-right: auto;
+   table-layout: fixed;
+}
+
+th {
+   padding-right: 2em;
+/* border: solid 0px;   */
+/* text-align: right;  */
+   color: #dddddd;
+}
+
+td {
+   padding-right: 2em;
+   color: #dddddd;
+   width: 65%;
+}
+
+td.vue_infos {
+    padding-left: 2em;
+    height: 75vh;
+    overflow: scroll;
+}
+
+a {
+   color: #cccccc;
+   text-decoration: none;
+   font-size: 1.5vh;
+   padding: 0.1em;
+   margin: 0.1em;
+}
+
+a.retour {
+   border: solid 1px grey;
+}
+
+a.bouton {
+   background-color: #3366ee;
+   text-decoration: none;
+   padding: 0.5em;
+   border-radius: 0.2em;
+}
+
+img.vue {
+    display: block;
+    margin: auto;
+    height: auto;
+    width:  auto;
+    max-height: 100%;
+    max-width:  100%;
+}
+
+#gl-edit-render {
+    width: 50vw;
+    height: 50vh;
+    display: block;
+}
+
+#niveaux-courbe {
+    display: block;
+    margin: auto;
+    height: auto;
+    width:  auto;
+    max-height: 100%;
+    max-width:  100%;
+    background-color: #333333;
+    border: solid 1px grey;
+}
+
+p {
+    font-size: 1.5vh;
+    padding: 0.3em;
+    color: #dddddd;
+}
+
+hr {
+    height: 0.1em;
+    background-color: #333333;
+    border: 0em;
+}
+
+form {
+    border: solid 0.25em;
+}
+
+input[type="file"] {
+    color: #cccccc;
+    background-color: #333333;
+    border: 1px solid;
+    border-color: grey;
+}
+
+input[type="submit"] {
+    color: #cccccc;
+    background-color: #333333;
+    border: 1px solid;
+    border-color: grey;
+}
+
+.slidecontainer {
+    width: 100%;
+}
+
+.slider {
+    -webkit-appearance: none;
+    width: 100%;
+    height: 25px;
+    background: #333333;
+    outline: none;
+    opacity: 0.7;
+    -webkit-transition: .2s;
+    transition: opacity .2s;
+/*  border: 1px solid grey; */
+}
+
+.slider:hover {
+    opacity: 1;
+}
+
+.slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 25px;
+    height: 25px;
+    background: #4CAF50;
+    cursor: pointer;
+}
+
+.slider::-moz-range-thumb {
+    cursor: pointer;
+}
+
+img.vue {
+    display: block;
+    margin: auto;
+    height: auto;
+    width:  auto;
+    max-height: 100%;
+    max-width:  100%;
+}
