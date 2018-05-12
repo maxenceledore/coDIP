@@ -183,13 +183,6 @@ if(isset($_GET['img_id']) && !empty($_GET['img_id'])) {
              1.0, 0.0
         ]);
 
-//         var texCoords = new Float32Array([
-//              1.0, 0.0,
-//              1.0, 1.0,
-//              0.0, 0.0,
-//              0.0, 1.0
-//         ]);
-
         const vertexArray = gl.createVertexArray();
         gl.bindVertexArray(vertexArray);
 
