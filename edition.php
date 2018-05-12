@@ -15,7 +15,7 @@ if(isset($_GET['img_id']) && !empty($_GET['img_id'])) {
   <head>
     <link rel="stylesheet" type="text/css" href="style.css">
 
-    <script> var VERSION = '0.01'; </script>
+    <script> const VERSION = '0.01'; </script>
   </head>
 
   <body>
@@ -49,16 +49,16 @@ if(isset($_GET['img_id']) && !empty($_GET['img_id'])) {
     'use strict';
 
     function createShader(gl, source, type) {
-        var shader = gl.createShader(type);
+        const shader = gl.createShader(type);
         gl.shaderSource(shader, source);
         gl.compileShader(shader);
         return shader;
     }
 
     window.createProgram = function(gl, vsSrc, fsSrc) {
-        var program = gl.createProgram();
-        var vshader = createShader(gl, vsSrc, gl.VERTEX_SHADER);
-        var fshader = createShader(gl, fsSrc, gl.FRAGMENT_SHADER);
+        const program = gl.createProgram();
+        const vshader = createShader(gl, vsSrc, gl.VERTEX_SHADER);
+        const fshader = createShader(gl, fsSrc, gl.FRAGMENT_SHADER);
 
         if(!gl.getShaderParameter(vshader, gl.COMPILE_STATUS))
            console.log(gl.getShaderInfoLog(vshader));
@@ -99,8 +99,8 @@ if(isset($_GET['img_id']) && !empty($_GET['img_id'])) {
             'use strict';
         const canvasRenduOpengl = document.querySelector("#gl-edit-render");
 
-        var gl = canvasRenduOpengl.getContext('webgl2', { antialias: false });
-        var isWebGL2 = !!gl;
+        const gl = canvasRenduOpengl.getContext('webgl2', { antialias: false });
+        const isWebGL2 = !!gl;
         if(!isWebGL2) {
             window.alert(`
             Gallerie requiert WebGL 2 (OpenGL ES 3)\n
@@ -112,22 +112,22 @@ if(isset($_GET['img_id']) && !empty($_GET['img_id'])) {
             // return;
         }
     (function () {
-        var debugInfo = gl.getExtension('WEBGL_debug_renderer_info');
+        const debugInfo = gl.getExtension('WEBGL_debug_renderer_info');
         if(debugInfo) {
-          var vendor    = gl.getParameter(debugInfo.UNMASKED_VENDOR_WEBGL);
-          var renderer  = gl.getParameter(debugInfo.UNMASKED_RENDERER_WEBGL);
+          const vendor    = gl.getParameter(debugInfo.UNMASKED_VENDOR_WEBGL);
+          const renderer  = gl.getParameter(debugInfo.UNMASKED_RENDERER_WEBGL);
           /* WebGL/OpenGL version/vend */
           console.log(vendor, renderer);
           }
-        var maxTextureSize      = gl.getParameter(gl.MAX_TEXTURE_SIZE);
-        var maxArrayTextureLayers = gl.getParameter(gl.MAX_ARRAY_TEXTURE_LAYERS);
-        var max3DTextureSize    = gl.getParameter(gl.MAX_3D_TEXTURE_SIZE);
-        var maxRenderbufferSize = gl.getParameter(gl.MAX_RENDERBUFFER_SIZE);
-        var maxDrawBuffers      = gl.getParameter(gl.MAX_DRAW_BUFFERS);
-        var maxUniformBlockSize = gl.getParameter(gl.MAX_UNIFORM_BLOCK_SIZE);
-        var maxFragmentUniformVectors = gl.getParameter(gl.MAX_FRAGMENT_UNIFORM_VECTORS);
-        var maxFragmentUniformBlocks = gl.getParameter(gl.MAX_FRAGMENT_UNIFORM_BLOCKS);
-        var maxCombinedFragmentUniformComponents = gl.getParameter(gl.MAX_COMBINED_FRAGMENT_UNIFORM_COMPONENTS);
+        const maxTextureSize      = gl.getParameter(gl.MAX_TEXTURE_SIZE);
+        const maxArrayTextureLayers = gl.getParameter(gl.MAX_ARRAY_TEXTURE_LAYERS);
+        const max3DTextureSize    = gl.getParameter(gl.MAX_3D_TEXTURE_SIZE);
+        const maxRenderbufferSize = gl.getParameter(gl.MAX_RENDERBUFFER_SIZE);
+        const maxDrawBuffers      = gl.getParameter(gl.MAX_DRAW_BUFFERS);
+        const maxUniformBlockSize = gl.getParameter(gl.MAX_UNIFORM_BLOCK_SIZE);
+        const maxFragmentUniformVectors = gl.getParameter(gl.MAX_FRAGMENT_UNIFORM_VECTORS);
+        const maxFragmentUniformBlocks = gl.getParameter(gl.MAX_FRAGMENT_UNIFORM_BLOCKS);
+        const maxCombinedFragmentUniformComponents = gl.getParameter(gl.MAX_COMBINED_FRAGMENT_UNIFORM_COMPONENTS);
 
         console.log('maxTextureSize:', maxTextureSize,'\n');
         console.log('maxArrayTextureLayers :', maxArrayTextureLayers);
@@ -141,8 +141,8 @@ if(isset($_GET['img_id']) && !empty($_GET['img_id'])) {
     })();
         <?php
           $img_dims = getimagesize($chemin_img);
-          echo 'var img_w ='.$img_w.";\n";
-          echo 'var img_h ='.$img_h.";\n";
+          echo 'const img_w ='.$img_w.";\n";
+          echo 'const img_h ='.$img_h.";\n";
         ?>
 
         var program = createProgram(gl, getShaderSource('vs'), getShaderSource('fs'));
@@ -166,17 +166,17 @@ if(isset($_GET['img_id']) && !empty($_GET['img_id'])) {
 //      gl.uniform1i(u_vert_courbe_niveau);
 //      gl.uniform1i(u_bleu_courbe_niveau);
 
-        var vertexPosLocation = 0;
-        var vertices = new Float32Array([
+        const vertexPosLocation = 0;
+        const vertices = new Float32Array([
             -1.0, -1.0,
              1.0, -1.0,
             -1.0,  1.0,
              1.0,  1.0
         ]);
 
-        var texCoordsLocation = 1;
+        const texCoordsLocation = 1;
 
-        var texCoords = new Float32Array([
+        const texCoords = new Float32Array([
              0.0, 1.0,
              1.0, 1.0,
              0.0, 0.0,
@@ -190,16 +190,16 @@ if(isset($_GET['img_id']) && !empty($_GET['img_id'])) {
 //              0.0, 1.0
 //         ]);
 
-        var vertexArray = gl.createVertexArray();
+        const vertexArray = gl.createVertexArray();
         gl.bindVertexArray(vertexArray);
 
-        var vertexPosBuffer = gl.createBuffer();
+        const vertexPosBuffer = gl.createBuffer();
         gl.bindBuffer(gl.ARRAY_BUFFER, vertexPosBuffer);
         gl.bufferData(gl.ARRAY_BUFFER, vertices, gl.STATIC_DRAW);
         gl.enableVertexAttribArray(vertexPosLocation);
         gl.vertexAttribPointer(vertexPosLocation, 2, gl.FLOAT, false, 0, 0);
 
-        var texCoordBuffer = gl.createBuffer();
+        const texCoordBuffer = gl.createBuffer();
         gl.bindBuffer(gl.ARRAY_BUFFER, texCoordBuffer);
         gl.bufferData(gl.ARRAY_BUFFER, texCoords, gl.STATIC_DRAW);
         gl.enableVertexAttribArray(texCoordsLocation);
@@ -212,14 +212,14 @@ if(isset($_GET['img_id']) && !empty($_GET['img_id'])) {
         const image = new Image();
 
         image.onload = function() {
-            var texture = gl.createTexture();
+            const texture = gl.createTexture();
             gl.activeTexture(gl.TEXTURE0);
             gl.bindTexture(gl.TEXTURE_2D, texture);
             gl.texImage2D(gl.TEXTURE_2D, 0, gl.RGB, img_w, img_h, 0, gl.RGB, gl.UNSIGNED_BYTE, image);
             gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_MAG_FILTER, gl.LINEAR);
             gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_MIN_FILTER, gl.LINEAR);
 
-            var imgtext_loc = gl.getUniformLocation(program, 'img');
+            const imgtext_loc = gl.getUniformLocation(program, 'img');
             gl.uniform1i(imgtext_loc, 0);
 
             gl.drawArrays(gl.TRIANGLE_STRIP, 0, 4);
