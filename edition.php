@@ -286,7 +286,7 @@ if(isset($_GET['img_id']) && !empty($_GET['img_id'])) {
       <div class="slidecontainer">
         <input type="range" min="-100" max="100" value="0" class="slider" id="satu"/>
       </div>
-      <script type="text/javascript" src="./edition/ui_saturation.js"></script>
+      <script type="text/javascript" src="./edition/ui_saturation.js"/>
 
       <p> <strong> LUMINOSITE </strong> </p>
       <div class="slidecontainer">
@@ -303,7 +303,7 @@ if(isset($_GET['img_id']) && !empty($_GET['img_id'])) {
       <p> <strong> COURBE </strong> </p>
 
       <canvas id="niveaux-courbe"></canvas>
-      <script type="text/javascript" src="./edition/ui_levels_curve.js"></script>
+      <script type="text/javascript" src="./edition/ui_levels_curve.js"/>
 
       <p> <strong> HISTOGRAMME </strong> </p>
 
