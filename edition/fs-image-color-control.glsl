@@ -114,7 +114,9 @@ vec3 niveau_de_gris_tsl(vec3 rvb) {
 
 vec3 niveau_de_gris_luminance(vec3 rvb) {
 
-     float l = 0.2126f*rvb.x+0.7152f*rvb.y+0.0722f*rvb.z; // <-- produit scalaire !
+     vec3 coeff = vec3(0.2126f,0.7152f,0.0722f);
+
+     float l = dot(rvb,coeff);
 
      return vec3(l);
 }
