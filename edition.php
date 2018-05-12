@@ -35,11 +35,11 @@ if(isset($_GET['img_id']) && !empty($_GET['img_id'])) {
         <?php echo "width=\"$img_w\" height=\"$img_h\""; ?> >
       </canvas>
 
-    <script id="vs" type="x-shader/x-vertex">
+    <script id="vs" type="application/x-glsl">
 <?php echo file_get_contents("./edition/vs-image-geometry.glsl") ?>
     </script>
 
-    <script id="fs" type="x-shader/x-vertex">
+    <script id="fs" type="application/x-glsl">
 <?php echo file_get_contents("./edition/fs-image-color-control.glsl") ?>
     </script>
 
