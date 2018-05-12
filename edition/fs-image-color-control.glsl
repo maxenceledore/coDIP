@@ -14,6 +14,16 @@ uniform float     niv_ent_lim_haute;
 uniform float     niv_sort_lim_basse;
 uniform float     niv_sort_lim_haute;
 
+uniform uint command;
+
+#define NO_OP                      0u
+#define SATURATION_CONTROL         1u
+#define INTENSITY_CONTROL          2u
+#define LEVEL_INPUT_LOWER_BOUND    3u
+#define LEVEL_INPUT_UPPER_BOUND    4u
+#define LEVEL_OUTPUT_LOWER_BOUND   5u
+#define LEVEL_OUTPUT_UPPER_BOUND   6u
+
 in      vec2      tc;
 out     vec4      color;
 
@@ -123,9 +133,53 @@ vec3 niveau_de_gris_luminance(vec3 rvb) {
 
 void main() {
 
-   vec3 pixel = texture(img, tc).xyz;
-   vec3 pixel_tsl = rvb_vers_tsl(pixel);
-   pixel_tsl.y *= float(satu_coeff);
-   pixel = tsl_vers_rvb(pixel_tsl);
+   uint cmd = command;
+
+   vec3 pixel     = texture(img, tc).xyz;
+   vec3 pixel_tsl = vec3(0.0f,0.0f,0.0f);
+
+   switch(cmd) {
+     case NO_OP:
+         break;
+     case SATURATION_CONTROL:
+         pixel_tsl = rvb_vers_tsl(pixel);
+         pixel_tsl.y *= float(satu_coeff);
+         pixel = tsl_vers_rvb(pixel_tsl);
+         break;
+     case INTENSITY_CONTROL:
+         pixel_tsl = rvb_vers_tsl(pixel);
+         pixel_tsl.z *= 1.+(1.-pixel_tsl.z)*lumi_coeff;
+         pixel = tsl_vers_rvb(pixel_tsl);
+         break;
+     case LEVEL_INPUT_LOWER_BOUND:
+     case LEVEL_INPUT_UPPER_BOUND:
+     case LEVEL_OUTPUT_UPPER_BOUND:
+     case LEVEL_OUTPUT_LOWER_BOUND:
+         float nslh = niv_sort_lim_haute;
+         float nslb = niv_sort_lim_basse;
+         float nelh = niv_ent_lim_haute;
+         float nelb = niv_ent_lim_basse;
+ 
+         float m = (nslh - nslb) / (nelh - nelb);
+         float p = nslh - (m*nelh);
+
+         pixel_tsl = rvb_vers_tsl(pixel);
+ 
+         float l = pixel_tsl.z;
+ 
+         if(l >= nelb || l <= nelh)
+           l = m * l + p;
+         else if(l < nelb)
+           l = nslb;
+         else
+           l = nslh;
+
+         pixel_tsl.z = l;
+         pixel = tsl_vers_rvb(pixel_tsl);
+         break;
+     default:
+         break;
+   }
+
    color = vec4(pixel,1.0f);
 }

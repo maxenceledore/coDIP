@@ -117,6 +117,15 @@ if(isset($_GET['img_id']) && !empty($_GET['img_id'])) {
           echo 'const img_h ='.$img_h.";\n";
         ?>
 
+        const NO_OP                    =  0;
+        const SATURATION_CONTROL       =  1;
+        const INTENSITY_CONTROL        =  2;
+        const LEVEL_INPUT_LOWER_BOUND  =  3;
+        const LEVEL_INPUT_UPPER_BOUND  =  4;
+        const LEVEL_OUTPUT_LOWER_BOUND =  5;
+        const LEVEL_OUTPUT_UPPER_BOUND =  6;
+
+        var command = NO_OP;
         var program = createProgram(gl, getShaderSource('vs'), getShaderSource('fs'));
         var imgtext_loc  = gl.getUniformLocation(program, 'img');
         var u_lumi_coeff = gl.getUniformLocation(program, "lumi_coeff");
@@ -125,6 +134,7 @@ if(isset($_GET['img_id']) && !empty($_GET['img_id'])) {
         var u_niv_ent_lim_haute  = gl.getUniformLocation(program, "niv_ent_lim_haute");
         var u_niv_sort_lim_basse = gl.getUniformLocation(program, "niv_sort_lim_basse");
         var u_niv_sort_lim_haute = gl.getUniformLocation(program, "niv_sort_lim_haute");
+        var u_command = gl.getUniformLocation(program, "command");
 
         gl.useProgram(program);
         gl.uniform1f(u_lumi_coeff, 0.0);  /* -100/0/+100 --> -1.0/0.0/+1.0 */
@@ -137,6 +147,7 @@ if(isset($_GET['img_id']) && !empty($_GET['img_id'])) {
 //      gl.uniform1i(u_rouge_courbe_niveau);
 //      gl.uniform1i(u_vert_courbe_niveau);
 //      gl.uniform1i(u_bleu_courbe_niveau);
+        gl.uniform1ui(u_command, NO_OP);
 
         const vertexPosLocation = 0;
         const vertices = new Float32Array([
@@ -212,7 +223,10 @@ if(isset($_GET['img_id']) && !empty($_GET['img_id'])) {
       <script>
         var curseur_niv_elb = document.getElementById("niv-ent-lim-basse");
         curseur_niv_elb.oninput = function() {
-          console.log(curseur_niv_elb.value);
+          const UI_ELB_VAL_MAX = curseur_niv_elb.max;
+          gl.uniform1f(u_niv_ent_lim_basse, curseur_niv_elb.value/UI_ELB_VAL_MAX);
+          gl.uniform1ui(u_command, LEVEL_INPUT_LOWER_BOUND);
+          gl.drawArrays(gl.TRIANGLE_STRIP, 0, 4);
         }
       </script>
 
@@ -222,7 +236,10 @@ if(isset($_GET['img_id']) && !empty($_GET['img_id'])) {
       <script>
         var curseur_niv_elh = document.getElementById("niv-ent-lim-haute");
         curseur_niv_elh.oninput = function() {
-          console.log(curseur_niv_elh.value);
+          const UI_ELH_VAL_MAX = curseur_niv_elh.max;
+          gl.uniform1f(u_niv_ent_lim_haute, curseur_niv_elh.value/UI_ELH_VAL_MAX);
+          gl.uniform1ui(u_command, LEVEL_INPUT_UPPER_BOUND);
+          gl.drawArrays(gl.TRIANGLE_STRIP, 0, 4);
         }
       </script>
 
@@ -233,7 +250,10 @@ if(isset($_GET['img_id']) && !empty($_GET['img_id'])) {
       <script>
         var curseur_niv_slb = document.getElementById("niv-sort-lim-basse");
         curseur_niv_slb.oninput = function() {
-          console.log(curseur_niv_slb.value);
+          const UI_SLB_VAL_MAX = curseur_niv_slb.max;
+          gl.uniform1f(u_niv_sort_lim_basse, curseur_niv_slb.value/UI_SLB_VAL_MAX);
+          gl.uniform1ui(u_command, LEVEL_OUTPUT_LOWER_BOUND);
+          gl.drawArrays(gl.TRIANGLE_STRIP, 0, 4);
         }
       </script>
 
@@ -243,7 +263,10 @@ if(isset($_GET['img_id']) && !empty($_GET['img_id'])) {
       <script>
         var curseur_niv_slh = document.getElementById("niv-sort-lim-haute");
         curseur_niv_slh.oninput = function() {
-          console.log(curseur_niv_slh.value);
+          const UI_SLH_VAL_MAX = curseur_niv_slh.max;
+          gl.uniform1f(u_niv_sort_lim_haute, curseur_niv_slh.value/UI_SLH_VAL_MAX);
+          gl.uniform1ui(u_command, LEVEL_OUTPUT_UPPER_BOUND);
+          gl.drawArrays(gl.TRIANGLE_STRIP, 0, 4);
         }
       </script>
 
@@ -260,7 +283,8 @@ if(isset($_GET['img_id']) && !empty($_GET['img_id'])) {
       <script>
         var curseur_lumi = document.getElementById("lumi");
         curseur_lumi.oninput = function() {
-          gl.uniform1f(u_lumi_coeff, curseur_lumi.value);
+          gl.uniform1f(u_lumi_coeff, curseur_lumi.value/100.0f);
+          gl.uniform1ui(u_command, INTENSITY_CONTROL);
           gl.drawArrays(gl.TRIANGLE_STRIP, 0, 4);
         }
       </script>
