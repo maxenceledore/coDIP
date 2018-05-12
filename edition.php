@@ -109,7 +109,6 @@ if(isset($_GET['img_id']) && !empty($_GET['img_id'])) {
             - Chrome 46\n
             - Safari 11 (activation manuelle)
             `);
-            // return;
         }
 
         <?php
