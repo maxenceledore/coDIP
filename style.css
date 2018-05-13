@@ -98,9 +98,7 @@ img.vue {
 }
 
 #gl-edit-render {
-    width: 50vw;
-    height: 50vh;
-    display: block;
+    width: 100%;
 }
 
 #niveaux-courbe {
