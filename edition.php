@@ -231,15 +231,19 @@ if(isset($_GET['img_id']) && !empty($_GET['img_id'])) {
     <td class="vue_infos">
 
       <p> <strong> sRGB </strong> </p>
+
       <p> CORRECTION GAMMA </p>
 
       <p> <strong> NIVEAUX    </strong> </p>
 
+      <div class="dot-small bg-red">   </div>
+      <div class="dot-small bg-green"> </div>
+      <div class="dot-small bg-blue">  </div>
+      <div class="dot-small bg-white"> </div>
+
       <p> ENTREE </p>
-      <div class="slidecontainer">
-        <input type="range" min="0" max="255" value="0" class="slider" id="niv-ent-lim-basse">
+      <input type="range" min="0" max="255" value="0" class="slider" id="niv-ent-lim-basse">
         <span id="val-niv-ent-lim-basse"></span>
-      </div>
       <script>
         var curseur_niv_elb = document.getElementById("niv-ent-lim-basse");
         curseur_niv_elb.oninput = function() {
@@ -250,9 +254,7 @@ if(isset($_GET['img_id']) && !empty($_GET['img_id'])) {
         }
       </script>
 
-      <div class="slidecontainer">
-        <input type="range" min="0" max="255" value="255" class="slider" id="niv-ent-lim-haute">
-      </div>
+      <input type="range" min="0" max="255" value="255" class="slider b2w-hori" id="niv-ent-lim-haute">
       <script>
         var curseur_niv_elh = document.getElementById("niv-ent-lim-haute");
         curseur_niv_elh.oninput = function() {
@@ -264,9 +266,7 @@ if(isset($_GET['img_id']) && !empty($_GET['img_id'])) {
       </script>
 
       <p> SORTIE </p>
-      <div class="slidecontainer">
-        <input type="range" min="0" max="255" value="0" class="slider" id="niv-sort-lim-basse"/>
-      </div>
+      <input type="range" min="0" max="255" value="0" class="slider" id="niv-sort-lim-basse"/>
       <script>
         var curseur_niv_slb = document.getElementById("niv-sort-lim-basse");
         curseur_niv_slb.oninput = function() {
@@ -277,9 +277,7 @@ if(isset($_GET['img_id']) && !empty($_GET['img_id'])) {
         }
       </script>
 
-      <div class="slidecontainer">
-        <input type="range" min="0" max="255" value="255" class="slider" id="niv-sort-lim-haute"/>
-      </div>
+      <input type="range" min="0" max="255" value="255" class="slider b2w-hori" id="niv-sort-lim-haute"/>
       <script>
         var curseur_niv_slh = document.getElementById("niv-sort-lim-haute");
         curseur_niv_slh.oninput = function() {
@@ -289,17 +287,12 @@ if(isset($_GET['img_id']) && !empty($_GET['img_id'])) {
           gl.drawArrays(gl.TRIANGLE_STRIP, 0, 4);
         }
       </script>
-
       <p> <strong> SATURATION </strong> </p>
-      <div class="slidecontainer">
-        <input type="range" min="-100" max="100" value="0" class="slider" id="satu"/>
-      </div>
+      <input type="range" min="-100" max="100" value="0" class="slider" id="satu"/>
       <script type="text/javascript" src="./edition/ui_saturation.js"/>
 
       <p> <strong> LUMINOSITE </strong> </p>
-      <div class="slidecontainer">
-        <input type="range" min="-100" max="100" value="0" class="slider" id="lumi"/>
-      </div>
+      <input type="range" min="-100" max="100" value="0" class="slider" id="lumi"/>
       <script>
         var curseur_lumi = document.getElementById("lumi");
         curseur_lumi.oninput = function() {
@@ -311,8 +304,13 @@ if(isset($_GET['img_id']) && !empty($_GET['img_id'])) {
 
       <p> <strong> COURBE </strong> </p>
 
+      <div class="dot-small bg-red">   </div>
+      <div class="dot-small bg-green"> </div>
+      <div class="dot-small bg-blue">  </div>
+      <div class="dot-small bg-white"> </div>
+
       <canvas id="niveaux-courbe"></canvas>
-      <script type="text/javascript" src="./edition/ui_levels_curve.js"/>
+      <script> <?php echo file_get_contents("./edition/ui_levels_curve.js"); ?> </script>
 
       <p> <strong> HISTOGRAMME </strong> </p>
 

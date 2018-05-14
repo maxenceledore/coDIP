@@ -142,37 +142,13 @@ input[type="submit"] {
     border-color: grey;
 }
 
-.slidecontainer {
-    width: 100%;
-}
-
 .slider {
     -webkit-appearance: none;
     width: 100%;
     height: 25px;
-    background: #333333;
+    padding-bottom: 2em;
+    border-bottom: 3px solid;
     outline: none;
-    opacity: 0.7;
-    -webkit-transition: .2s;
-    transition: opacity .2s;
-/*  border: 1px solid grey; */
-}
-
-.slider:hover {
-    opacity: 1;
-}
-
-.slider::-webkit-slider-thumb {
-    -webkit-appearance: none;
-    appearance: none;
-    width: 25px;
-    height: 25px;
-    background: #4CAF50;
-    cursor: pointer;
-}
-
-.slider::-moz-range-thumb {
-    cursor: pointer;
 }
 
 img.vue {
@@ -183,3 +159,28 @@ img.vue {
     max-height: 100%;
     max-width:  100%;
 }
+
+.b2w-hori {
+    border-image: linear-gradient(to right, black, white) 1;
+}
+
+.b2w-vert {
+    background: linear-gradient(to top, rgba(0,0,0,1), rgba(255,255,255,1));
+}
+
+.dot-small {
+    display: inline-block;
+    width: 2.0vh;
+    height: 2.0vh;
+    border-radius: 1.0vh;
+    margin: 2.0vh;
+}
+
+.bg-black   {background-color: black; }
+.bg-white   {background-color: white; }
+.bg-red     {background-color: red;   }
+.bg-green   {background-color: green; }
+.bg-blue    {background-color: blue;  }
+.bg-cyan    {background-color: cyan;  }
+.bg-yellow  {background-color: yellow;}
+.bg-magenta {background-color: rgb(255,0,255);}
