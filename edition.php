@@ -64,6 +64,10 @@ if(isset($_GET['img_id']) && !empty($_GET['img_id'])) {
     </script>
 
     <script>
+<?php echo file_get_contents("./edition/ui_events_util.js") ?>
+    </script>
+
+    <script>
     <?php
       echo 'const img_w    ='.$img_w.";\n";
       echo 'const img_h    ='.$img_h.";\n";

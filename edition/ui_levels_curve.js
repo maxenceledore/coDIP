@@ -1,11 +1,3 @@
-       function getMousePos(canvas, evt) {
-        var rect = canvas.getBoundingClientRect();
-        return {
-          x: parseInt(evt.clientX - rect.left, 10),
-          y: parseInt(evt.clientY - rect.top, 10)
-        };
-      }
-
       var canvas_niveaux_courbe = document.getElementById("niveaux-courbe");
       var ctx = canvas_niveaux_courbe.getContext("2d");
 
