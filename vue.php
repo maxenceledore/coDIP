@@ -56,41 +56,115 @@ if(isset($_GET['img_id']) && !empty($_GET['img_id'])) {
       $infos_fichier = exif_read_data($chemin_img, 'FILE',true);
 
       if($infos_fichier !== false) {
+         $FileSize = '';
+         $MimeType = '';
+         $Width = '';
+         $Height = '';
+         $SectionsFound = '';
+         $Make = '';
+         $Model = '';
+         $ExposureTime = '';
+         $FNumber = '';
+         $ExposureBiasValue = '';
+         $FocalLength = '';
+         $DateTimeOriginal = '';
+         $ColorSpace = '';
+         $ISOSpeedRatings='';
+         $WhiteBalance = '';
+
          foreach ($infos_fichier as $key => $section)
             foreach ($section as $name => $val) {
-               if($name === 'FileSize')
-                  echo "<p> Taille : $val octets </p>\n";
-               else if($name === 'MimeType')
-                  echo "<p> Type : $val </p>\n";
-               else if($name === 'Width')
-                  echo "<p> Largeur : $val </p>\n";
-               else if($name === 'Height')
-                  echo "<p> Hauteur : $val </p>\n";
-               else if($name === 'SectionsFound')
-                  echo "<p> Sources EXIF : $val </p>\n";
-               else if($name === 'Make')
-                  echo "<p> Appareil : $val </p>\n";
-               else if($name === 'Model')
-                  echo "<p> Modèle : $val </p>\n";
-               else if($name === 'ExposureTime')
-                  echo "<p> Durée d'exposition : $val </p>\n";
-               else if($name === 'FNumber')
-                  echo "<p> Ouverture : $val </p>\n";
-               else if($name === 'ExposureBiasValue')
-                  echo "<p> Correction d\'exposition : $val </p>\n";
-               else if($name === 'FocalLength')
-                  echo "<p> Longueur de focale : $val </p>\n";
-               else if($name === 'DateTimeOriginal')
-                  echo "<p> Date et heure de prise de vue : $val </p>\n";
-               else if($name === 'ColorSpace')
-                  echo "<p> Espace couleurs : $val </p>\n";
+               if($name === 'FileSize') {
+                  $val = "File size : ".$val.' Bytes';
+                  $FileSize = '<p>'.$val.'</p>';
+                  }
+               else if($name === 'MimeType') {
+                  $val = "MIME type : ".$val;
+                  $MimeType = '<p>'.$val.'</p>';
+                  }
+               else if($name === 'Width' || $name === 'ExifImageWidth') {
+                  $val = "Width : ".$val;
+                  $Width = '<p>'.$val.'</p>';
+                  }
+               else if($name === 'Height' || $name === 'ExifImageHeight') {
+                  $val = "Height : ".$val;
+                  $Height = '<p>'.$val.'</p>';
+                  }
+               else if($name === 'SectionsFound') {
+                  $val = "Sections Found : ".$val;
+                  $SectionsFound = '<p>'.$val.'</p>';
+                  }
+               else if($name === 'Make') {
+                  $val = "Make : ".$val;
+                  $Make = '<p>'.$val.'</p>';
+                  }
+               else if($name === 'Model') {
+                  $val = "Model : ".$val;
+                  $Model = '<p>'.$val.'</p>';
+                  }
+               else if($name === 'ExposureTime') {
+                  $val = "Exposure Time : ".$val;
+                  $ExposureTime = '<p>'.$val.'</p>';
+                  }
+               else if($name === 'FNumber') {
+                  $val = "FNumber : ".$val;
+                  $FNumber = '<p>'.$val.'</p>';
+                  }
+               else if($name === 'ExposureBiasValue') {
+                  $val = "Exposure Bias Value : ".$val;
+                  $ExposureBiasValue = '<p>'.$val.'</p>';
+                  }
+               else if($name === 'FocalLength') {
+                  $val = "Focal Length : ".$val;
+                  $FocalLength = '<p>'.$val.'</p>';
+                  }
+               else if($name === 'DateTimeOriginal') {
+                  $val = "Date and Time : ".$val;
+                  $DateTimeOriginal = '<p>'.$val.'</p>';
+                  }
+               else if($name === 'ColorSpace') {
+                  if ($val == 1)
+                     $val = 'sRGB';
+                  $val = "Color Space : ".$val;
+                  $ColorSpace = '<p>'.$val.'</p>';
+                  }
+               else if($name === 'ISOSpeedRatings') {
+                  $val = "ISO : ".$val;
+                  $ISOSpeedRatings = '<p>'.$val.'</p>';
+                  }
+               else if($name === 'WhiteBalance') {
+                  if($val == 0)
+                    $val = 'Automatic';
+                  else
+                    $val = 'Manual';
+                  $val = "White Balance : ".$val;
+                  $WhiteBalance = '<p>'.$val.'</p>';
+                  }
                }
+
+               echo
+               $Width.
+               $Height.
+               $DateTimeOriginal.
+               $FileSize.
+               $MimeType.
+               $Make.
+               $Model.
+               $ISOSpeedRatings.
+               $ExposureTime.
+               $FNumber.
+               $ExposureBiasValue.
+               $FocalLength.
+               $WhiteBalance.
+               $ColorSpace.
+               $SectionsFound;
+
                echo "<a href=./edition.php?img_id=$fichier class=\"bouton\">Editer</a>";
                echo "<a href=\"$chemin_img\" class=\"bouton\" download>Télécharger</a>";
 
-//          foreach ($infos_fichier as $key => $section)
-//             foreach ($section as $name => $val)
-//                echo "$key.$name: $val<br />\n";
+//           foreach ($infos_fichier as $key => $section)
+//              foreach ($section as $name => $val)
+//                 echo "$key.$name: $val<br />\n";
       }
     ?>
     </td>
