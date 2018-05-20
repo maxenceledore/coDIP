@@ -88,6 +88,10 @@ a.bouton {
    border-radius: 0.2em;
 }
 
+p {
+    text-align: left;
+}
+
 img.vue {
     display: block;
     margin: auto;

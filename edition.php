@@ -228,7 +228,7 @@ if(isset($_GET['img_id']) && !empty($_GET['img_id'])) {
 
     </td>
 
-    <td class="vue_infos">
+    <td class="vue_infos centrage">
 
       <p> <strong> sRGB </strong> </p>
 
