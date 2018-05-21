@@ -27,22 +27,23 @@ echo file_get_contents("./disclaimer_notice.html");
     <link rel="stylesheet" type="text/css" href="style.css">
   </head>
   <body>
-
-  <div id = "login-frame0">
-
-  <h1 class="centrage"> coDIP v0.03</p>
-  <form class="login-form" name="signup" class="signup" action="phototeque.php">
-     <input class="login-field" type="text"     placeholder="Username"/><br/>
-     <input class="login-field" type="password" placeholder="Password"/><br/>
-     <button type="submit">Login</button>
- </form>
-
- </div>
- <p class="warn centrage"> No need yet to enter credentials. Just click login.</p>
- <p class="centrage"> This software is licensed under the GNU AGPL v3 terms.</p>
- <p class="centrage"> Source code :
-   <a href="https://github.com/maxenceledore/coDIP" alt="" target="_blank">There
-   </a>
- </p>
+  <?php
+          if(isset($_GET['page']))
+            switch($_GET['page']) {
+            case 'phototeque':
+              include './phototeque.php';
+              break;
+            case 'vue':
+              include './vue.php';
+              break;
+            case 'edition':
+              include './edition.php';
+              break;
+            default:
+              include './login_page.htm';
+              }
+           else
+             include './login_page.htm';
+  ?>
   </body>
 </html>

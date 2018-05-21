@@ -30,11 +30,6 @@ pclose($pipe_liste);
 
 ?>
 
-<html>
-  <head>
-    <link rel="stylesheet" type="text/css" href="style.css">
-  </head>
-  <body>
     <h1>Gallerie</h1>
     <div id="import-et-retour">
     <form method="post" action="import.php" enctype="multipart/form-data">
@@ -46,12 +41,9 @@ pclose($pipe_liste);
     <div id="cadre-gallerie">
     <?php
       foreach($fichiers_gal as $fichier) {
-        echo "<a href=\"./vue.php?img_id=$fichier\">
+        echo "<a href=\"./index.php?page=vue&img_id=$fichier\">
                 <img alt=\"$fichier\" src=\"./min/$fichier\"/>
              </a>";
       }
     ?>
     </div>
-
-  </body>
-</html>

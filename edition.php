@@ -16,9 +16,6 @@
 //    You should have received a copy of the GNU Affero General Public
 //    License along with coDIP.
 //    If not, see <http://www.gnu.org/licenses/>.
-?>
-
-<?php
 
 if(isset($_GET['img_id']) && !empty($_GET['img_id'])) {
 
@@ -30,14 +27,6 @@ if(isset($_GET['img_id']) && !empty($_GET['img_id'])) {
 }
 
 ?>
-
-<html>
-  <head>
-    <link rel="stylesheet" type="text/css" href="style.css">
-  </head>
-
-  <body>
-
     <h1> <?php echo $fichier; ?>
     </h1>
 
@@ -170,6 +159,3 @@ if(isset($_GET['img_id']) && !empty($_GET['img_id'])) {
     </td>
     </tr></table>
     </div>
-
-  </body>
-</html>

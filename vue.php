@@ -16,22 +16,12 @@
 //    You should have received a copy of the GNU Affero General Public
 //    License along with coDIP.
 //    If not, see <http://www.gnu.org/licenses/>.
-?>
-
-<?php
 
 if(isset($_GET['img_id']) && !empty($_GET['img_id'])) {
   $fichier = $_GET['img_id'];
 }
 
 ?>
-
-<html>
-  <head>
-    <link rel="stylesheet" type="text/css" href="style.css">
-  </head>
-
-  <body>
 
     <h1> <?php echo $fichier ?> </h1>
 
@@ -159,7 +149,7 @@ if(isset($_GET['img_id']) && !empty($_GET['img_id'])) {
                $ColorSpace.
                $SectionsFound;
 
-               echo "<a href=./edition.php?img_id=$fichier class=\"bouton\">Editer</a>";
+               echo "<a href=./index.php?page=edition&img_id=$fichier class=\"bouton\">Editer</a>";
                echo "<a href=\"$chemin_img\" class=\"bouton\" download>Télécharger</a>";
 
 //           foreach ($infos_fichier as $key => $section)
@@ -170,6 +160,3 @@ if(isset($_GET['img_id']) && !empty($_GET['img_id'])) {
     </td>
     </tr></table>
     </div>
-
-  </body>
-</html>
