@@ -16,6 +16,10 @@
 //    You should have received a copy of the GNU Affero General Public
 //    License along with coDIP.
 //    If not, see <http://www.gnu.org/licenses/>.
+
+//    dump copyright disclaimer and AGPL license notice.
+echo file_get_contents("./disclaimer_notice.html");
+
 ?>
 
 <html>
