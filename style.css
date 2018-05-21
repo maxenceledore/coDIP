@@ -47,6 +47,15 @@ input.login-field {
     margin: 1em;
 }
 
+#main-categories-bar {
+    margin: auto;
+    width: 100%;
+    float: top;
+    min-height: 5em;
+    border-bottom: solid 0.25em;
+    border-image: linear-gradient(to right, #9600ff, #00ff96) 1;    
+}
+
 #cadre-gallerie {
    margin-left: auto;
    margin-right: auto;

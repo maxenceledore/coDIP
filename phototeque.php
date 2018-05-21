@@ -29,6 +29,7 @@ $fichiers_gal = explode("\n", $stdout);
 pclose($pipe_liste);
 
 ?>
+    <?php echo file_get_contents('main-cat.htm'); ?>
 
     <h1>Gallerie</h1>
     <div id="import-et-retour">

@@ -22,11 +22,12 @@ if(isset($_GET['img_id']) && !empty($_GET['img_id'])) {
 }
 
 ?>
+    <?php echo file_get_contents('main-cat.htm'); ?>
 
     <h1> <?php echo $fichier ?> </h1>
 
     <div id="import-et-retour">
-    <a href="./phototeque.php" class="retour"> Retour </a>
+    <a href="./index.php?page=phototeque" class="retour"> Retour </a>
     </div>
 
     <div id="cadre-gallerie">
