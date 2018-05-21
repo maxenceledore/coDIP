@@ -26,7 +26,7 @@ if(isset($_FILES['fichier']) && !empty($_FILES['fichier'])) {
 
    if($_FILES['fichier']['error'] != 0) {
       unset($chemin_upload);
-      header('Location: index.php');
+      header('Location: phototeque.php');
       }
 
    $nom = substr(md5($_FILES['fichier']['tmp_name']),0,12);
@@ -96,6 +96,6 @@ if(isset($_FILES['fichier']) && !empty($_FILES['fichier'])) {
    imagedestroy($minia);
 }
 
-header('Location: index.php');
+header('Location: phototeque.php');
 
 ?>

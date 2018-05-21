@@ -36,7 +36,7 @@ if(isset($_GET['img_id']) && !empty($_GET['img_id'])) {
     <h1> <?php echo $fichier ?> </h1>
 
     <div id="import-et-retour">
-    <a href="./index.php" class="retour"> Retour </a>
+    <a href="./phototeque.php" class="retour"> Retour </a>
     </div>
 
     <div id="cadre-gallerie">
