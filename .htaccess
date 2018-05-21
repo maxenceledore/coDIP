@@ -1,2 +1,5 @@
+# This requires setting Apache configuration overrides to
+# "AllowOverride Options" or "AllowOverride All"
+
 php_value post_max_size 40M
 php_value upload_max_filesize 40M
