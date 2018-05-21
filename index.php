@@ -30,6 +30,12 @@ echo file_get_contents("./disclaimer_notice.html");
   <?php
           if(isset($_GET['page']))
             switch($_GET['page']) {
+            case 'about':
+              include './about.php';
+              break;
+            case 'help':
+              include './help.php';
+              break;
             case 'phototeque':
               include './phototeque.php';
               break;
@@ -39,11 +45,16 @@ echo file_get_contents("./disclaimer_notice.html");
             case 'edition':
               include './edition.php';
               break;
+            case 'settings':
+              include './configuration.php';
+              break;
             default:
               include './login_page.htm';
               }
            else
              include './login_page.htm';
   ?>
+  <!--<div id="feet">
+  </div>-->
   </body>
 </html>

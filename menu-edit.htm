@@ -1,0 +1,91 @@
+<div class="menu-edit-bar-lv0">
+  <div class="edit-bar-lv0-section"
+  onclick="show_from_this_class_only_this_id('menu-edit-bar-lv1','edit-lv1-layers','inline')"> LAYERS </div>
+  <div class="edit-bar-lv0-section"
+  onclick="show_from_this_class_only_this_id('menu-edit-bar-lv1','edit-lv1-colors','inline')"> COLOR OPERATIONS </div>
+  <div class="edit-bar-lv0-section"
+  onclick="show_from_this_class_only_this_id('menu-edit-bar-lv1','edit-lv1-filters','inline')"> FILTERS </div>
+  <div class="edit-bar-lv0-section"
+  onclick="show_from_this_class_only_this_id('menu-edit-bar-lv1','edit-lv1-transform','inline')"> TRANSFORM </div>
+  <div class="edit-bar-lv0-section"
+  onclick="show_from_this_class_only_this_id('menu-edit-bar-lv1','edit-lv1-tools','inline')"> TOOLS </div>
+  <div class="edit-bar-lv0-section" alt = "History"> HISTORY </div>
+  <div class="edit-bar-lv0-section"
+  onclick="show_from_this_class_only_this_id('menu-edit-bar-lv1','edit-lv1-infos','inline')"> INFOS </div>
+</div>
+
+<div class="menu-edit-bar-lv1" id="edit-lv1-tools" hidden="true">
+  <div class="edit-bar-lv1-section"> Zoom In </div>
+  <div class="edit-bar-lv1-section"> Zoom Out </div>
+  <div class="edit-bar-lv1-section"> Clone </div>
+  <div class="edit-bar-lv1-section"> Barbouillage </div>
+  <div class="edit-bar-lv1-section"> Select </div>
+  <div class="edit-bar-lv1-section"> Copy </div>
+  <div class="edit-bar-lv1-section"> Cut </div>
+  <div class="edit-bar-lv1-section"> Paste </div>
+  <div class="edit-bar-lv1-section"> Grid </div>
+  <div class="edit-bar-lv1-section"> Line </div>
+</div>
+
+<div class="menu-edit-bar-lv1" id="edit-lv1-layers" hidden="true">
+  <div class="edit-bar-lv1-section"> Manage layers </div>
+  <div class="edit-bar-lv1-section"> Merge layers </div>
+</div>
+
+<div class="menu-edit-bar-lv1" id="edit-lv1-colors" hidden="true">
+  <div class="edit-bar-lv1-section"
+  onclick="show_from_this_class_only_this_id('edit-module','edit-mod-luminosity','block')"> Luminosity </div>
+  <div class="edit-bar-lv1-section"
+  onclick="show_from_this_class_only_this_id('edit-module','edit-mod-saturation','block')">
+  Saturation </div>
+  <div class="edit-bar-lv1-section"> Negate </div>
+  <div class="edit-bar-lv1-section"
+  onclick="show_from_this_class_only_this_id('edit-module','edit-mod-levels','block')">
+  Levels </div>
+  <div class="edit-bar-lv1-section"
+  onclick="show_from_this_class_only_this_id('edit-module','edit-mod-curve-based-levels','block')">
+  Curve based levels </div>
+  <div class="edit-bar-lv1-section"> Color space </div>
+  <div class="edit-bar-lv1-section"> Color balance </div>
+  <div class="edit-bar-lv1-section"> Contrast </div>
+</div>
+
+<div class="menu-edit-bar-lv1" id="edit-lv1-filters" hidden="true">
+  <div class="edit-bar-lv1-section"> Gaussian blur </div>
+  <div class="edit-bar-lv1-section"> Sharpen </div>
+  <div class="edit-bar-lv1-section"> Unsharp masking </div>
+</div>
+
+<div class="menu-edit-bar-lv1" id="edit-lv1-transform" hidden="true">
+  <div class="edit-bar-lv1-section"> Crop </div>
+  <div class="edit-bar-lv1-section"> Scale </div>
+  <div class="edit-bar-lv1-section"> Rotate </div>
+  <div class="edit-bar-lv1-section"> Flip-X </div>
+  <div class="edit-bar-lv1-section"> Flip-Y </div>
+  <div class="edit-bar-lv1-section"> Lens </div>
+</div>
+
+<div class="menu-edit-bar-lv1" id="edit-lv1-infos" hidden="true">
+  <div class="edit-bar-lv1-section"> Histogram </div>
+</div>
+
+<div class="menu-edit-bar-lv1" id="edit-lv1-null">
+  <div class="edit-bar-lv1-section"> - </div>
+</div>
+
+<script>
+
+function show_from_this_class_only_this_id(classname, id, display) {
+
+  var found_elems = document.getElementsByClassName(classname);
+  var num_found   = found_elems.length;
+
+  for(var i=0 ; i < num_found ; i++) {
+      if(found_elems[i].id != id)
+         found_elems[i].style.display = 'none';
+      else
+         found_elems[i].style.display = display;
+         }
+}
+
+</script>

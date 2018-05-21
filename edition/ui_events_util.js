@@ -25,5 +25,5 @@ function handle_keypress(event){
         gl.drawArrays(gl.TRIANGLE_STRIP, 0, 4);
      // console.log("zoom_out :", zoom);
     }
-    console.log('CharCode :', charCode);
+    // console.log('CharCode :', charCode);
 }

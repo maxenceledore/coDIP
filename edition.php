@@ -28,15 +28,13 @@ if(isset($_GET['img_id']) && !empty($_GET['img_id'])) {
 
 ?>
     <?php echo file_get_contents('main-cat.htm'); ?>
-
-    <div id="import-et-retour">
-    <a href="./index.php?page=phototeque" class="retour"> Retour </a>
-    </div>
+    <?php echo file_get_contents('menu-edit.htm'); ?>
 
     <div id="cadre-gallerie">
     <table><tr><th></th><th></th></tr>
     <tr>
     <td>
+      <p class="centrage gras"> <?php echo $fichier; ?></p>
       <canvas id="gl-edit-render"
         <?php echo "width=\"$img_w\" height=\"$img_h\""; ?> >
       </canvas>
@@ -71,13 +69,8 @@ if(isset($_GET['img_id']) && !empty($_GET['img_id'])) {
 
     <td class="vue_infos centrage">
 
-      <p class="centrage gras"> <?php echo $fichier; ?></p>
-
-      <p> <strong> sRGB </strong> </p>
-
-      <p> CORRECTION GAMMA </p>
-
-      <p> <strong> NIVEAUX    </strong> </p>
+      <div class="edit-module" id="edit-mod-levels" hidden=true>
+      <p> <strong> NIVEAUX </strong> </p>
 
       <div class="dot-small bg-red">   </div>
       <div class="dot-small bg-green"> </div>
@@ -130,10 +123,15 @@ if(isset($_GET['img_id']) && !empty($_GET['img_id'])) {
           gl.drawArrays(gl.TRIANGLE_STRIP, 0, 4);
         }
       </script>
+      </div>
+
+      <div class="edit-module" id="edit-mod-saturation" hidden=true>
       <p> <strong> SATURATION </strong> </p>
       <input type="range" min="-100" max="100" value="0" class="slider" id="satu"/>
       <script type="text/javascript" src="./edition/ui_saturation.js"></script>
+      </div>
 
+      <div class="edit-module" id="edit-mod-luminosity" hidden=true>
       <p> <strong> LUMINOSITE </strong> </p>
       <input type="range" min="-100" max="100" value="0" class="slider" id="lumi"/>
       <script>
@@ -144,7 +142,9 @@ if(isset($_GET['img_id']) && !empty($_GET['img_id'])) {
           gl.drawArrays(gl.TRIANGLE_STRIP, 0, 4);
         }
       </script>
+      </div>
 
+      <div class="edit-module" id="edit-mod-curve-based-levels" hidden=true>
       <p> <strong> COURBE </strong> </p>
 
       <div class="dot-small bg-red">   </div>
@@ -154,9 +154,11 @@ if(isset($_GET['img_id']) && !empty($_GET['img_id'])) {
 
       <canvas id="niveaux-courbe"></canvas>
       <script> <?php echo file_get_contents("./edition/ui_levels_curve.js"); ?> </script>
+      </div>
 
+      <div class="edit-module" id="edit-mod-histogram" hidden=true>
       <p> <strong> HISTOGRAMME </strong> </p>
-
+      </div>
     </td>
     </tr></table>
     </div>

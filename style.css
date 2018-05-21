@@ -51,9 +51,53 @@ input.login-field {
     margin: auto;
     width: 100%;
     float: top;
-    min-height: 5em;
-    border-bottom: solid 0.25em;
+    padding-top: 1em;
+    border-bottom: solid 0.2em;
     border-image: linear-gradient(to right, #9600ff, #00ff96) 1;    
+    text-align: right;
+}
+
+.main-nav-section {
+   margin: 1.0em;
+}
+
+.menu-edit-bar-lv0 {
+    width: 100%;
+    padding: 0.20em;
+    border-bottom: solid 1px;
+    border-image: linear-gradient(to left, #9600ff, #00ff96) 1;
+    text-align: left;
+}
+
+.menu-edit-bar-lv1 {
+    width: 100%;
+    padding: 0.20em;
+    border-bottom: solid 1px;
+    border-image: linear-gradient(to right, #9600ff, #00ff96) 1;
+    text-align: left;
+}
+
+.edit-bar-lv0-section, .edit-bar-lv1-section {
+   display: inline;
+   margin: 1.0em;
+   padding: 0.3em;
+   font-size: 1.5vh;
+   color: #dddddd;
+   text-align: left;
+   font-weight: bold;
+   cursor: pointer;
+}
+.edit-bar-lv1-section {
+   font-weight: normal;
+}
+
+#feet {
+    position:absolute;
+    bottom: 0;
+    width: 100%;
+    min-height: 1em;
+    border-top: solid 1px;
+    border-image: linear-gradient(to right, #9600ff, #00ff96) 1;
 }
 
 #cadre-gallerie {
@@ -82,31 +126,6 @@ h1 { font-size: 2.5vw }
 h2 { font-size: 2.0vw }
 h3 { font-size: 1.5vw }
 
-table {
-   margin-left: auto;
-   margin-right: auto;
-   table-layout: fixed;
-}
-
-th {
-   padding-right: 2em;
-/* border: solid 0px;   */
-/* text-align: right;  */
-   color: #dddddd;
-}
-
-td {
-   padding-right: 2em;
-   color: #dddddd;
-   width: 65%;
-}
-
-td.vue_infos {
-    padding-left: 2em;
-    height: 75vh;
-    overflow: scroll;
-}
-
 a {
    color: #cccccc;
    text-decoration: none;
@@ -127,7 +146,36 @@ a.bouton {
 }
 
 p {
+    font-size: 1.5vh;
+    padding: 0.3em;
+    color: #dddddd;
     text-align: left;
+}
+
+/* View/Edition */
+
+table {
+   margin-left: auto;
+   margin-right: auto;
+   table-layout: fixed;
+}
+
+th {
+   padding-right: 2em;
+/* border: solid 0px;   */
+/* text-align: right;  */
+   color: #dddddd;
+}
+
+td {
+   padding-right: 2em;
+   color: #dddddd;
+   width: 65%;
+}
+
+td.vue_infos {
+    max-width: 25%;
+    height: 75vh;
 }
 
 img.vue {
@@ -152,12 +200,6 @@ img.vue {
     max-width:  100%;
     background-color: #333333;
     border: solid 1px grey;
-}
-
-p {
-    font-size: 1.5vh;
-    padding: 0.3em;
-    color: #dddddd;
 }
 
 hr {
@@ -226,3 +268,33 @@ img.vue {
 .bg-cyan    {background-color: cyan;  }
 .bg-yellow  {background-color: yellow;}
 .bg-magenta {background-color: rgb(255,0,255);}
+
+/* Settings */
+table.settings {
+    width: 100%;
+}
+td.settings-section {
+    width: 20%;
+    border: 0.1em solid #000000;
+    padding: 2em;
+    background-color: #1a0030;
+    background: linear-gradient(to right, #270043, #001438);
+    text-align: center;
+    color: #cccccc;
+}
+td.settings-parameters {
+    border: 0.1em solid #000000;
+    border-radius: 0.5em;
+    padding: 2em;
+    background-color: #21003d;
+    background: linear-gradient(to right, #001438, #003821);
+    text-align: center;
+    color: #aaaaaa;
+}
+
+.settings-params-title {
+    text-align: right;
+    font-weight: bold;
+    font-size: 1.5em;
+
+}
