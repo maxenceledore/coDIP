@@ -34,8 +34,6 @@ if(isset($_GET['img_id']) && !empty($_GET['img_id'])) {
 <html>
   <head>
     <link rel="stylesheet" type="text/css" href="style.css">
-
-    <script> const VERSION = ' coDIP 0.02'; </script>
   </head>
 
   <body>
