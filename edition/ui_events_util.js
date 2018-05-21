@@ -9,10 +9,19 @@ function getMousePos(canvas, evt) {
 window.onkeypress =  handle_keypress;
 function handle_keypress(event){
     var charCode = (typeof event.which == "number") ? event.which : event.keyCode
+    // pressed numpad +
     if(charCode == 43) {
-        console.log("zoom_in");
+        zoom *=2;
+        gl.uniform1f(u_scale, zoom);
+        gl.drawArrays(gl.TRIANGLE_STRIP, 0, 4);
+     // console.log("zoom_in :", zoom);
     }
+    // pressed numpad -
     else if(charCode == 45) {
-        console.log("zoom_out");
+        zoom /=2;
+        gl.uniform1f(u_scale, zoom);
+        gl.drawArrays(gl.TRIANGLE_STRIP, 0, 4);
+     // console.log("zoom_out :", zoom);
     }
+    console.log('CharCode :', charCode);
 }

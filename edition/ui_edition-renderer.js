@@ -70,6 +70,9 @@
 
         var command = NO_OP;
         var program = createProgram(gl, getShaderSource('vs'), getShaderSource('fs'));
+
+        var u_scale      = gl.getUniformLocation(program, "scale");
+
         var imgtext_loc  = gl.getUniformLocation(program, 'img');
         var u_lumi_coeff = gl.getUniformLocation(program, "lumi_coeff");
         var u_satu_coeff = gl.getUniformLocation(program, "satu_coeff");
@@ -80,6 +83,9 @@
         var u_command = gl.getUniformLocation(program, "command");
 
         gl.useProgram(program);
+
+        gl.uniform1f(u_scale, 1.0);
+
         gl.uniform1f(u_lumi_coeff, 0.0);  /* -100/0/+100 --> -1.0/0.0/+1.0 */
         gl.uniform1f(u_satu_coeff, 1.0);  /* -100/0/+100 --> 0.0/+1.0/+2.0 */
         gl.uniform1f(u_niv_ent_lim_basse,    0./255.);
