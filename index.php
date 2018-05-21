@@ -26,7 +26,7 @@
 
   <div id = "login-frame0">
 
-  <h1 class="centrage"> coDIP v0.02</p>
+  <h1 class="centrage"> coDIP v0.03</p>
   <form class="login-form" name="signup" class="signup" action="phototeque.php">
      <input class="login-field" type="text"     placeholder="Username"/><br/>
      <input class="login-field" type="password" placeholder="Password"/><br/>
