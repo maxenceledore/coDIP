@@ -149,6 +149,41 @@
             gl.uniform1i(imgtext_loc, 0);
 
             gl.drawArrays(gl.TRIANGLE_STRIP, 0, 4);
+
+            /* evaluate histogram */
+/*
+            var histo = document.createElement('canvas');
+            histo.id = "histo";
+            var ctx = histo.getContext('2d');
+            ctx.canvas.width = img_w;
+            ctx.canvas.height = img_h;
+            ctx.drawImage(image, 0, 0,img_w,img_h);
+            image.style.display = 'none';
+            for(var i=0 ; i < img_w ; i++) {
+                for(var j=0 ; j < img_h ; j++) {
+                    var pixel = ctx.getImageData(i, j, 1, 1);
+                    var data = pixel.data;
+                    var r = data[0];
+                    var g = data[1];
+                    var b = data[2];
+                    histo_blue[r] += 1;
+                    histo_green[g]+= 1;
+                    histo_red[b]  += 1;
+                }
+            }
+            pixel_count = img_w*img_h;
+            for(var i=0 ; i < 255 ; i++) {
+                histo_blue[i] /= pixel_count;
+                histo_green[i]/= pixel_count;
+                histo_red[i]  /= pixel_count;
+            }
+            var dump ='';
+            for(var i=0 ; i < 255 ; i++) {
+                dump += histo_blue[i] + ',';
+            }
+            console.log(dump);
+            histo.remove();
+*/
             };
         image.src = img_path;
 

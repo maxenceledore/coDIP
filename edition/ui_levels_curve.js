@@ -63,3 +63,12 @@
       ctx.fillStyle = '#eeeeee';
       ctx.fillRect (cp1x-3, cp1y-3, 6, 6);
       ctx.fillRect (cp2x-3, cp2y-3, 6, 6);
+
+      // draw histo blue
+      ctx.strokeStyle = '#bbbbbb';
+      for(var i=0 ; i < 255 ; i++) {
+          ctx.beginPath();
+          ctx.moveTo(0,cnc_h);
+          ctx.lineTo(0,cnc_h*(1-histo_blue[i]));
+          ctx.stroke();
+      }
