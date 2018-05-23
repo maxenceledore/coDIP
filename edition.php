@@ -29,9 +29,6 @@ if(isset($_GET['img_id']) && !empty($_GET['img_id'])) {
 ?>
     <?php echo file_get_contents('main-cat.htm'); ?>
 
-    <h1> <?php echo $fichier; ?>
-    </h1>
-
     <div id="import-et-retour">
     <a href="./index.php?page=phototeque" class="retour"> Retour </a>
     </div>
@@ -73,6 +70,8 @@ if(isset($_GET['img_id']) && !empty($_GET['img_id'])) {
     </td>
 
     <td class="vue_infos centrage">
+
+      <p class="centrage"> <?php echo $fichier; ?></p>
 
       <p> <strong> sRGB </strong> </p>
 
