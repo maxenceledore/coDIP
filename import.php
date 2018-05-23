@@ -96,6 +96,6 @@ if(isset($_FILES['fichier']) && !empty($_FILES['fichier'])) {
    imagedestroy($minia);
 }
 
-header('Location: phototeque.php');
+header('Location: ./index.php?page=phototeque');
 
 ?>
