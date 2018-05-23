@@ -71,7 +71,7 @@ if(isset($_GET['img_id']) && !empty($_GET['img_id'])) {
 
     <td class="vue_infos centrage">
 
-      <p class="centrage"> <?php echo $fichier; ?></p>
+      <p class="centrage gras"> <?php echo $fichier; ?></p>
 
       <p> <strong> sRGB </strong> </p>
 
