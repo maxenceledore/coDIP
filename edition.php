@@ -139,7 +139,7 @@ if(isset($_GET['img_id']) && !empty($_GET['img_id'])) {
       <script>
         var curseur_lumi = document.getElementById("lumi");
         curseur_lumi.oninput = function() {
-          gl.uniform1f(u_lumi_coeff, curseur_lumi.value/100.0f);
+          gl.uniform1f(u_lumi_coeff, curseur_lumi.value/100.0);
           gl.uniform1ui(u_command, INTENSITY_CONTROL);
           gl.drawArrays(gl.TRIANGLE_STRIP, 0, 4);
         }
