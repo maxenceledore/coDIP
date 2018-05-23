@@ -133,7 +133,7 @@ if(isset($_GET['img_id']) && !empty($_GET['img_id'])) {
       </script>
       <p> <strong> SATURATION </strong> </p>
       <input type="range" min="-100" max="100" value="0" class="slider" id="satu"/>
-      <script type="text/javascript" src="./edition/ui_saturation.js"/>
+      <script type="text/javascript" src="./edition/ui_saturation.js"></script>
 
       <p> <strong> LUMINOSITE </strong> </p>
       <input type="range" min="-100" max="100" value="0" class="slider" id="lumi"/>
