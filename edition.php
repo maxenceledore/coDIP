@@ -41,9 +41,11 @@ if(isset($_GET['img_id']) && !empty($_GET['img_id'])) {
       <?php include('./edition/vs-image-geometry.php'); ?>
       <?php include('./edition/fs-image-color-control.php'); ?>
 
-      <canvas id="gl-edit-render"
-        <?php echo "width=\"$img_w\" height=\"$img_h\""; ?> >
-      </canvas>
+      <canvas id="gl-edit-render"></canvas>
+      <script>
+      document.getElementById("gl-edit-render").width = img_w;
+      document.getElementById("gl-edit-render").height = img_h;
+      </script>
 
       <?php include('./edition/ui_edition-renderer.php'); ?>
 
