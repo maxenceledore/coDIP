@@ -1,5 +1,5 @@
 <div class="edit-module" id="edit-mod-levels" hidden=true>
-<p> <strong> NIVEAUX </strong> </p>
+<p class="centrage"> <strong> NIVEAUX </strong> </p>
 
 <div class="dot-small bg-red" onclick="switch_levels_channel('red')">   </div>
 <div class="dot-small bg-green" onclick="switch_levels_channel('green')"> </div>

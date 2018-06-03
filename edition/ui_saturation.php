@@ -1,5 +1,5 @@
 <div class="edit-module" id="edit-mod-saturation" hidden=true>
-  <p> <strong> SATURATION </strong> </p>
+  <p class="centrage"> <strong> SATURATION </strong> </p>
   <input type="range" min="-100" max="100" value="0" class="slider" id="satu"/>
 </div>
 

@@ -5,7 +5,7 @@ var levels_curve_color='#dddddd';
 </script>
 
 <div class="edit-module" id="edit-mod-curve-based-levels" hidden=true>
-<p> <strong> COURBE </strong> </p>
+<p class="centrage"> <strong> COURBE </strong> </p>
 
 <div class="dot-small bg-red" onclick="switch_curve_levels_channel('red')">   </div>
 <div class="dot-small bg-green" onclick="switch_curve_levels_channel('green')"> </div>

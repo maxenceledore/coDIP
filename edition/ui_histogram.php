@@ -1,5 +1,5 @@
 <div class="edit-module" id="edit-mod-histogram">
-  <p> <strong> HISTOGRAMME </strong> </p>
+  <p class="centrage"> <strong> HISTOGRAMME </strong> </p>
   <canvas id="histogram"></canvas>
 </div>
 
