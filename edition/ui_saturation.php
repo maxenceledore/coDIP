@@ -1,3 +1,10 @@
+<div class="edit-module" id="edit-mod-saturation" hidden=true>
+  <p> <strong> SATURATION </strong> </p>
+  <input type="range" min="-100" max="100" value="0" class="slider" id="satu"/>
+</div>
+
+<script type="text/javascript">
+
 var curseur_satu = document.getElementById("satu");
 curseur_satu.oninput = function() {
   const COEFF_INTERNAL_MIN = 0.0;
@@ -11,3 +18,4 @@ curseur_satu.oninput = function() {
   gl.uniform1ui(u_command, SATURATION_CONTROL);
   gl.drawArrays(gl.TRIANGLE_STRIP, 0, 4);
 }
+</script>
