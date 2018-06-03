@@ -1,3 +1,11 @@
+<script>
+
+<?php
+  echo 'const img_w    ='.$img_w.";\n";
+  echo 'const img_h    ='.$img_h.";\n";
+  echo 'const img_path ='."\"$chemin_img\"".";\n";
+?>
+
 const VERSION = 'coDIP 0.04';
 
 var zoom   = 1.0;
@@ -18,3 +26,5 @@ for(var i=0 ; i < 255 ; i++) {
     histo_yellow[i] = 0;
     histo_magenta[i] = 0;
 }
+
+</script>

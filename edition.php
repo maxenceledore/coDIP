@@ -35,35 +35,17 @@ if(isset($_GET['img_id']) && !empty($_GET['img_id'])) {
     <tr>
     <td>
       <p class="centrage gras"> <?php echo $fichier; ?></p>
+
+      <?php include('./edition/codip_states.php'); ?>
+      <?php include('./edition/ui_events_util.php'); ?>
+      <?php include('./edition/vs-image-geometry.php'); ?>
+      <?php include('./edition/fs-image-color-control.php'); ?>
+
       <canvas id="gl-edit-render"
         <?php echo "width=\"$img_w\" height=\"$img_h\""; ?> >
       </canvas>
 
-    <script id="vs" type="application/x-glsl">
-<?php echo file_get_contents("./edition/vs-image-geometry.glsl") ?>
-    </script>
-
-    <script id="fs" type="application/x-glsl">
-<?php echo file_get_contents("./edition/fs-image-color-control.glsl") ?>
-    </script>
-
-    <script>
-    <?php
-      echo 'const img_w    ='.$img_w.";\n";
-      echo 'const img_h    ='.$img_h.";\n";
-      echo 'const img_path ='."\"$chemin_img\"".";\n";
-    ?>
-    </script>
-
-    <script> <?php echo file_get_contents("./edition/ui_edition-renderer.js"); ?> </script>
-
-    <script>
-<?php echo file_get_contents("./edition/codip_states.js") ?>
-    </script>
-
-    <script>
-<?php echo file_get_contents("./edition/ui_events_util.js") ?>
-    </script>
+      <?php include('./edition/ui_edition-renderer.php'); ?>
 
     </td>
 

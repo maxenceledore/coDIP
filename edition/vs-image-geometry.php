@@ -1,3 +1,5 @@
+<script id="vs" type="application/x-glsl">
+
 #version 300 es
 #define POSITION_LOCATION 0
 #define TEXCOORD_LOCATION 1
@@ -19,3 +21,5 @@ void main() {
   gl_Position = vec4(scaled_pos, 0.0f, 1.0f);
   tc = texcoord;
 }
+
+</script>

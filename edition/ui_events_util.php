@@ -1,3 +1,4 @@
+<script>
 function getMousePos(canvas, evt) {
     var rect = canvas.getBoundingClientRect();
     return {
@@ -27,3 +28,5 @@ function handle_keypress(event){
     }
     // console.log('CharCode :', charCode);
 }
+
+</script>

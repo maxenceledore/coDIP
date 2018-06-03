@@ -1,3 +1,5 @@
+<script id="fs" type="application/x-glsl">
+
 #version 300 es
 precision highp float;
 precision highp int;
@@ -183,3 +185,5 @@ void main() {
 
    color = vec4(pixel,1.0f);
 }
+
+</script>
