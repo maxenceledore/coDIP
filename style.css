@@ -70,7 +70,6 @@ input.login-field {
 }
 
 .menu-edit-bar-lv1 {
-    width: 100%;
     padding: 0.20em;
     border-bottom: solid 1px;
     border-image: linear-gradient(to right, #9600ff, #00ff96) 1;
