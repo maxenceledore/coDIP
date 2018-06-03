@@ -202,6 +202,17 @@ img.vue {
     border: solid 1px grey;
 }
 
+#histogram {
+    display: block;
+    margin: auto;
+    height: auto;
+    width:  auto;
+    max-height: 100%;
+    max-width:  100%;
+    background-color: #333333;
+    border: solid 1px grey;
+}
+
 hr {
     height: 0.1em;
     background-color: #333333;
