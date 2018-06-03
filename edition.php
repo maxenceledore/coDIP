@@ -41,7 +41,7 @@ if(isset($_GET['img_id']) && !empty($_GET['img_id'])) {
       <?php include('./edition/vs-image-geometry.php'); ?>
       <?php include('./edition/fs-image-color-control.php'); ?>
 
-      <canvas id="gl-edit-render"></canvas>
+      <canvas id="gl-edit-render" onclick="get_pixel_click_coords(event)"></canvas>
       <script>
       document.getElementById("gl-edit-render").width = img_w;
       document.getElementById("gl-edit-render").height = img_h;

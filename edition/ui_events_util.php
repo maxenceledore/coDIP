@@ -7,6 +7,16 @@ function getMousePos(canvas, evt) {
        };
     }
 
+function get_pixel_click_coords(event) {
+    var bounding_rect =
+    document.getElementById('gl-edit-render').getBoundingClientRect();
+    var x = (event.clientX-bounding_rect.left)/event.clientX;
+    var y = (event.clientY-bounding_rect.top)/event.clientY;
+    var clicked_pix_x = x*img_w;
+    var clicked_pix_y = y*img_h;
+}
+
+
 window.onkeypress =  handle_keypress;
 function handle_keypress(event){
     var charCode = (typeof event.which == "number") ? event.which : event.keyCode
