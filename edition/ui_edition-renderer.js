@@ -48,7 +48,7 @@
 
     const canvasRenduOpengl = document.querySelector("#gl-edit-render");
 
-        const gl = canvasRenduOpengl.getContext('webgl2', { antialias: false });
+        const gl = canvasRenduOpengl.getContext('webgl2', { antialias: false, depth: false });
         const isWebGL2 = !!gl;
         if(!isWebGL2) {
             window.alert(`
