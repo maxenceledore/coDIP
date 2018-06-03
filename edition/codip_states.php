@@ -11,6 +11,8 @@ const VERSION = 'coDIP 0.04';
 var clicked_pix_x = 0;
 var clicked_pix_y = 0;
 
+var num_layers = 1;
+
 var zoom   = 1.0;
 var offset = 0.0;
 

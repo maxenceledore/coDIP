@@ -56,6 +56,7 @@ if(isset($_GET['img_id']) && !empty($_GET['img_id'])) {
 
       <?php
         include('./edition/ui_histogram.php');
+        include('./edition/ui_layers.php');
         include('./edition/ui_levels.php');
         include('./edition/ui_levels_curve.php');
         include('./edition/ui_luminosity.php');
