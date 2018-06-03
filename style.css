@@ -252,6 +252,18 @@ img.vue {
     background: linear-gradient(to top, rgba(0,0,0,1), rgba(255,255,255,1));
 }
 
+.b2r-hori {
+    border-image: linear-gradient(to right, black, red) 1;
+}
+
+.b2g-hori {
+    border-image: linear-gradient(to right, black, green) 1;
+}
+
+.b2blue-hori {
+    border-image: linear-gradient(to right, black, blue) 1;
+}
+
 .dot-small {
     display: inline-block;
     width: 2.0vh;

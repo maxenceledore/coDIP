@@ -1,10 +1,43 @@
 <div class="edit-module" id="edit-mod-levels" hidden=true>
 <p> <strong> NIVEAUX </strong> </p>
 
-<div class="dot-small bg-red">   </div>
-<div class="dot-small bg-green"> </div>
-<div class="dot-small bg-blue">  </div>
-<div class="dot-small bg-white"> </div>
+<div class="dot-small bg-red" onclick="switch_levels_channel('red')">   </div>
+<div class="dot-small bg-green" onclick="switch_levels_channel('green')"> </div>
+<div class="dot-small bg-blue"  onclick="switch_levels_channel('blue')">  </div>
+<div class="dot-small bg-white"  onclick="switch_levels_channel('white')"> </div>
+
+<script>
+
+function switch_levels_channel(channel) {
+
+  if(channel == 'red') {
+    var curseur_niv_elh = document.getElementById("niv-ent-lim-haute");
+    curseur_niv_elh.className = "slider b2r-hori";
+    var curseur_niv_elh = document.getElementById("niv-sort-lim-haute");
+    curseur_niv_slh.className = "slider b2r-hori";
+    }
+  else if(channel == 'green') {
+    var curseur_niv_elh = document.getElementById("niv-ent-lim-haute");
+    curseur_niv_elh.className = "slider b2g-hori";
+    var curseur_niv_elh = document.getElementById("niv-sort-lim-haute");
+    curseur_niv_slh.className = "slider b2g-hori";
+    }
+  else if(channel == 'blue') {
+    var curseur_niv_elh = document.getElementById("niv-ent-lim-haute");
+    curseur_niv_elh.className = "slider b2blue-hori";
+    var curseur_niv_elh = document.getElementById("niv-sort-lim-haute");
+    curseur_niv_slh.className = "slider b2blue-hori";
+    }
+  else if(channel == 'white') {
+    var curseur_niv_elh = document.getElementById("niv-ent-lim-haute");
+    curseur_niv_elh.className = "slider b2w-hori";
+    var curseur_niv_elh = document.getElementById("niv-sort-lim-haute");
+    curseur_niv_slh.className = "slider b2w-hori";
+    }
+}
+
+</script>
+
 
 <p> ENTREE </p>
 <input type="range" min="0" max="255" value="0" class="slider" id="niv-ent-lim-basse">
