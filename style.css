@@ -177,6 +177,12 @@ td.vue_infos {
     height: 75vh;
 }
 
+td.editing-modules-container {
+    vertical-align: top;
+    max-width: 25%;
+    height: 75vh;
+}
+
 img.vue {
     display: block;
     margin: auto;

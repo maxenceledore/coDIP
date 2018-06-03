@@ -67,7 +67,7 @@ if(isset($_GET['img_id']) && !empty($_GET['img_id'])) {
 
     </td>
 
-    <td class="vue_infos centrage">
+    <td class="editing-modules-container centrage">
 
 
       <?php
