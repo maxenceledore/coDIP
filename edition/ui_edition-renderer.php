@@ -68,6 +68,7 @@
         const LEVEL_INPUT_UPPER_BOUND  =  4;
         const LEVEL_OUTPUT_LOWER_BOUND =  5;
         const LEVEL_OUTPUT_UPPER_BOUND =  6;
+        const NEGATE                   =  7;
 
         var command = NO_OP;
         var program = createProgram(gl, getShaderSource('vs'), getShaderSource('fs'));

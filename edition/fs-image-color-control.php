@@ -25,6 +25,7 @@ uniform uint command;
 #define LEVEL_INPUT_UPPER_BOUND    4u
 #define LEVEL_OUTPUT_LOWER_BOUND   5u
 #define LEVEL_OUTPUT_UPPER_BOUND   6u
+#define NEGATE                     7u
 
 in      vec2      tc;
 out     vec4      color;
@@ -178,6 +179,9 @@ void main() {
 
          pixel_tsl.z = l;
          pixel = tsl_vers_rvb(pixel_tsl);
+         break;
+     case NEGATE:
+         pixel = 1.0f-(pixel);
          break;
      default:
          break;
