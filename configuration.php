@@ -47,6 +47,7 @@
         <td class="settings-parameters">
         <p class="settings-params-title"> PREFERENCES </p>
         <p> Language : English </p>
+        <p> Password </p>
         </td>
       </tr>
       <tr>
