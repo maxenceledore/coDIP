@@ -15,6 +15,9 @@ uniform float     niv_ent_lim_basse;
 uniform float     niv_ent_lim_haute;
 uniform float     niv_sort_lim_basse;
 uniform float     niv_sort_lim_haute;
+uniform float     cb_gm_coeff;
+uniform float     cb_by_coeff;
+uniform float     cb_rc_coeff;
 
 uniform uint command;
 
@@ -26,6 +29,7 @@ uniform uint command;
 #define LEVEL_OUTPUT_LOWER_BOUND   5u
 #define LEVEL_OUTPUT_UPPER_BOUND   6u
 #define NEGATE                     7u
+#define COLOR_BALANCE             10u
 
 in      vec2      tc;
 out     vec4      color;
@@ -182,6 +186,11 @@ void main() {
          break;
      case NEGATE:
          pixel = 1.0f-(pixel);
+         break;
+     case COLOR_BALANCE:
+         pixel.r *= float(cb_rc_coeff);
+         pixel.g *= float(cb_gm_coeff);
+         pixel.b *= float(cb_by_coeff);
          break;
      default:
          break;

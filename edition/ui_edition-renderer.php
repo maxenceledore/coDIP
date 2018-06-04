@@ -73,6 +73,8 @@
         const FLIP_X                   =  8;
         const FLIP_Y                   =  9;
 
+        const COLOR_BALANCE            = 10;
+
         var command = NO_OP;
         var program = createProgram(gl, getShaderSource('vs'), getShaderSource('fs'));
 
@@ -86,6 +88,9 @@
         var u_niv_ent_lim_haute  = gl.getUniformLocation(program, "niv_ent_lim_haute");
         var u_niv_sort_lim_basse = gl.getUniformLocation(program, "niv_sort_lim_basse");
         var u_niv_sort_lim_haute = gl.getUniformLocation(program, "niv_sort_lim_haute");
+        var u_cb_gm_coeff = gl.getUniformLocation(program, "cb_gm_coeff");
+        var u_cb_by_coeff = gl.getUniformLocation(program, "cb_by_coeff");
+        var u_cb_rc_coeff = gl.getUniformLocation(program, "cb_rc_coeff");
         var u_command = gl.getUniformLocation(program, "command");
 
         gl.useProgram(program);
@@ -102,6 +107,10 @@
 //      gl.uniform1i(u_rouge_courbe_niveau);
 //      gl.uniform1i(u_vert_courbe_niveau);
 //      gl.uniform1i(u_bleu_courbe_niveau);
+        gl.uniform1f(u_cb_gm_coeff, 1.0);  /* -100/0/+100 --> 0.0/+1.0/+2.0 */
+        gl.uniform1f(u_cb_by_coeff, 1.0);  /* -100/0/+100 --> 0.0/+1.0/+2.0 */
+        gl.uniform1f(u_cb_rc_coeff, 1.0);  /* -100/0/+100 --> 0.0/+1.0/+2.0 */
+
         gl.uniformMatrix2fv(u_planar_rotation, false, rotation_mat);
         gl.uniform1ui(u_command, NO_OP);
 
