@@ -55,6 +55,7 @@ if(isset($_GET['img_id']) && !empty($_GET['img_id'])) {
 
 
       <?php
+        include('./edition/ui_color-balance.php');
         include('./edition/ui_crop.php');
         include('./edition/ui_histogram.php');
         include('./edition/ui_layers.php');

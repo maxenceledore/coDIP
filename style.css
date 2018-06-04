@@ -286,6 +286,16 @@ img.vue {
     border-image: linear-gradient(to right, black, blue) 1;
 }
 
+.green2magenta {
+    border-image: linear-gradient(to right, green, rgb(255,0,255)) 1;
+}
+.blue2yellow {
+    border-image: linear-gradient(to right, blue, rgb(255,255,0)) 1;
+}
+.red2cyan {
+    border-image: linear-gradient(to right, red, rgb(0,255,255)) 1;
+}
+
 .dot-small {
     display: inline-block;
     width: 2.0vh;
