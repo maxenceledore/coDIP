@@ -16,27 +16,15 @@ function get_pixel_click_coords(event) {
     var clicked_pix_y = y*img_h;
 }
 
-
 window.onkeypress =  handle_keypress;
 function handle_keypress(event){
     var charCode = (typeof event.which == "number") ? event.which : event.keyCode
     // pressed numpad +
-    if(charCode == 43) {
-        if(zoom <= 32)
-          zoom *=2;
-        gl.uniform1f(u_scale, zoom);
-        gl.drawArrays(gl.TRIANGLE_STRIP, 0, 4);
-     // console.log("zoom_in :", zoom);
-    }
+    if(charCode == 43)
+        zoom_in();
     // pressed numpad -
-    else if(charCode == 45) {
-        if(zoom >= 0.03125)
-          zoom /=2;
-        gl.uniform1f(u_scale, zoom);
-        gl.drawArrays(gl.TRIANGLE_STRIP, 0, 4);
-     // console.log("zoom_out :", zoom);
-    }
-    // console.log('CharCode :', charCode);
+    else if(charCode == 45)
+        zoom_out();
 }
 
 </script>

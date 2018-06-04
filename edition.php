@@ -67,6 +67,7 @@ if(isset($_GET['img_id']) && !empty($_GET['img_id'])) {
         include('./edition/ui_rotate.php');
         include('./edition/ui_saturation.php');
         include('./edition/ui_scale.php');
+        include('./edition/ui_zoom.php');
       ?>
 
     </td>
