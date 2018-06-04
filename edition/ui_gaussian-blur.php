@@ -1,7 +1,7 @@
 <div class="edit-module" id="edit-mod-gaussian-blur" hidden=true>
 <p class="centrage"> <strong> GAUSSIAN BLUR </strong> </p>
-<input type="number" min="1" value="1" id="kernel-width">
-<input type="number" min="1" value="1" id="kernel-height">
+<p class="centrage"> Width :  <input type="number" min="1" value="1" id="kernel-width"> </p>
+<p class="centrage"> Height : <input type="number" min="1" value="1" id="kernel-height"> </p>
 <p class="centrage"> Selective gaussian blur
 <input type="checkbox" id="gaussian-selective">
 </p>

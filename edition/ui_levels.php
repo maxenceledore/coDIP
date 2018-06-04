@@ -5,6 +5,7 @@
 <div class="dot-small bg-green" onclick="switch_levels_channel('green')"> </div>
 <div class="dot-small bg-blue"  onclick="switch_levels_channel('blue')">  </div>
 <div class="dot-small bg-white"  onclick="switch_levels_channel('white')"> </div>
+<p class="centrage"> Channel(s) </p>
 
 <script>
 

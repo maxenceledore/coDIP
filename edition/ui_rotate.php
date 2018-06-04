@@ -1,6 +1,7 @@
 <div class="edit-module" id="edit-mod-rotate" hidden=true>
   <p class="centrage"> <strong> ROTATE </strong> </p>
-  <input type="number" min="-180" max="180" value="0" id="rotation-angle-value"/>
+  <p class="centrage"> Angle </p>
+  <input type="range" min="-180" max="180" value="0" class="slider" id="rotation-angle"/>
   <input type="number" min="-180" max="180" value="0" id="rotation-angle-value"/>
   </p>
   <script>

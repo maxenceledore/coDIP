@@ -1,7 +1,7 @@
 <div class="edit-module" id="edit-mod-scale" hidden=true>
 <p class="centrage"> <strong> SCALE </strong> </p>
-<input type="number" min="1" id="scale-width" oninput="keep_aspect_ratio('width')">
-<input type="number" min="1" id="scale-height" oninput="keep_aspect_ratio('height')">
+<p class="centrage"> Width : <input type="number" min="1" id="scale-width" oninput="keep_aspect_ratio('width')"> </p>
+<p class="centrage"> Height : <input type="number" min="1" id="scale-height" oninput="keep_aspect_ratio('height')"> </p>
 <p class="centrage"> Keep aspect ratio
 <input type="checkbox" id="scale-kar" name="Keep aspect ratio" checked>
 </p>

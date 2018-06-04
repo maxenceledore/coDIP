@@ -1,9 +1,9 @@
 <div class="edit-module" id="edit-mod-crop" hidden=true>
 <p class="centrage"> <strong> CROP </strong> </p>
-<input type="number" min="1" id="crop-width">
-<input type="number" min="1" id="crop-height">
-<input type="number" value="0" id="crop-offset-x">
-<input type="number" value="0" id="crop-offset-y">
+<p class="centrage"> Width : <input type="number" min="1" id="crop-width"> </p>
+<p class="centrage"> Height : <input type="number" min="1" id="crop-height"> </p> 
+<p class="centrage"> X-Offset : <input type="number" value="0" id="crop-offset-x"> </p>
+<p class="centrage"> Y-Offset : <input type="number" value="0" id="crop-offset-y"> </p>
 </div>
 
 <script>
