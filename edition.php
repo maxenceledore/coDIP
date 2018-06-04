@@ -30,7 +30,7 @@ if(isset($_GET['img_id']) && !empty($_GET['img_id'])) {
     <?php echo file_get_contents('main-cat.htm'); ?>
     <?php echo file_get_contents('menu-edit.htm'); ?>
 
-    <div id="cadre-gallerie">
+    <div id="editing-frame">
     <table><tr><th></th><th></th></tr>
     <tr>
     <td>
