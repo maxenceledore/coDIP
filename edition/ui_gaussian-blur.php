@@ -1,12 +1,12 @@
 <div class="edit-module" id="edit-mod-gaussian-blur" hidden=true>
 <p class="centrage"> <strong> GAUSSIAN BLUR </strong> </p>
-<input min="1" value="1" id="kernel-width">
-<input min="1" value="1" id="kernel-height">
+<input type="number" min="1" value="1" id="kernel-width">
+<input type="number" min="1" value="1" id="kernel-height">
 <p class="centrage"> Selective gaussian blur
 <input type="checkbox" id="gaussian-selective">
 </p>
 <p class="centrage"> Threshold
-<input min="0" value="0" max="255" id="gaussian-thresold">
+<input type="number" min="0" value="0" max="255" id="gaussian-thresold">
 </p>
 </div>
 

@@ -250,6 +250,16 @@ input[type="file"] {
     border-color: grey;
 }
 
+input[type="number"] {
+    margin: 0.5em;
+    padding: 0.5em;
+    text-align: center;
+    color: #cccccc;
+    background-color: #333333;
+    border: 1px solid;
+    border-color: grey;
+}
+
 input[type="submit"] {
     color: #cccccc;
     background-color: #333333;
