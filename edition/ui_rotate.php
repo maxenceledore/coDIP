@@ -24,6 +24,7 @@
       var sin_angle = Math.sin(radian);
       rotation_mat = new Float32Array([cos_angle,sin_angle,-sin_angle,cos_angle]);
       gl.uniformMatrix2fv(u_planar_rotation, false, rotation_mat);
+      gl.clear(gl.COLOR_BUFFER_BIT);
       gl.drawArrays(gl.TRIANGLE_STRIP, 0, 4);
     }
   </script>
