@@ -86,6 +86,12 @@ input.login-field {
    font-weight: bold;
    cursor: pointer;
 }
+
+.edit-bar-lv0-section-highlight {
+    color: black;
+    background-color: white;
+}
+
 .edit-bar-lv1-section {
    font-weight: normal;
 }
