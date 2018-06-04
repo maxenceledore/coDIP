@@ -64,6 +64,7 @@ if(isset($_GET['img_id']) && !empty($_GET['img_id'])) {
         include('./edition/ui_levels_curve.php');
         include('./edition/ui_luminosity.php');
         include('./edition/ui_negate.php');
+        include('./edition/ui_rotate.php');
         include('./edition/ui_saturation.php');
         include('./edition/ui_scale.php');
       ?>

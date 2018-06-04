@@ -11,14 +11,20 @@ layout(location = POSITION_LOCATION) in vec2 pos;
 layout(location = TEXCOORD_LOCATION) in vec2 texcoord;
 
 uniform float scale;
+uniform mat2  planar_rotation;
+
+uniform uint command;
 
 out vec2 tc;
 
 void main() {
 
-  vec2 scaled_pos = scale*pos;
+  uint cmd = command;
+  vec2 transformed_pos = scale*pos;
 
-  gl_Position = vec4(scaled_pos, 0.0f, 1.0f);
+  transformed_pos *= planar_rotation;
+
+  gl_Position = vec4(transformed_pos, 0.0f, 1.0f);
   tc = texcoord;
 }
 

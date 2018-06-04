@@ -20,7 +20,6 @@ document.getElementById("kernel-height").max = wh_min;
 function evaluate_gaussian_kernel(width, height) {
 
   sigma = 0.84089642;
-  
 }
 
 function apply_gaussian_blur() {

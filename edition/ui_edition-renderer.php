@@ -70,10 +70,14 @@
         const LEVEL_OUTPUT_UPPER_BOUND =  6;
         const NEGATE                   =  7;
 
+        const FLIP_X                   =  8;
+        const FLIP_Y                   =  9;
+
         var command = NO_OP;
         var program = createProgram(gl, getShaderSource('vs'), getShaderSource('fs'));
 
-        var u_scale      = gl.getUniformLocation(program, "scale");
+        var u_scale          = gl.getUniformLocation(program, "scale");
+        var u_planar_rotation= gl.getUniformLocation(program, "planar_rotation");
 
         var imgtext_loc  = gl.getUniformLocation(program, 'img');
         var u_lumi_coeff = gl.getUniformLocation(program, "lumi_coeff");
@@ -98,6 +102,7 @@
 //      gl.uniform1i(u_rouge_courbe_niveau);
 //      gl.uniform1i(u_vert_courbe_niveau);
 //      gl.uniform1i(u_bleu_courbe_niveau);
+        gl.uniformMatrix2fv(u_planar_rotation, false, rotation_mat);
         gl.uniform1ui(u_command, NO_OP);
 
         const vertexPosLocation = 0;

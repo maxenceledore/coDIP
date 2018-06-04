@@ -15,6 +15,7 @@ var num_layers = 1;
 
 var zoom   = 1.0;
 var offset = 0.0;
+var rotation_mat = new Float32Array([1.0,0.0,0.0,1.0]);
 
 var histo_blue    = new Float32Array(255);
 var histo_green   = new Float32Array(255);
