@@ -198,6 +198,14 @@ td.editing-modules-container {
     height: 75vh;
 }
 
+.edit-module {
+    margin-top: 1em;
+    padding-top: 1em;
+    padding-bottom: 2em;
+    border-radius: 2.5%;
+    background-color: rgb(48,48,48);
+}
+
 img.vue {
     display: block;
     margin: auto;
@@ -215,7 +223,7 @@ img.vue {
     display: block;
     margin: auto;
     height: auto;
-    width:  auto;
+    width:  90%;
     max-height: 100%;
     max-width:  100%;
     background-color: #333333;
@@ -226,7 +234,7 @@ img.vue {
     display: block;
     margin: auto;
     height: auto;
-    width:  auto;
+    width:  90%;
     max-height: 100%;
     max-width:  100%;
     background-color: #333333;
@@ -252,7 +260,7 @@ input[type="file"] {
 
 input[type="number"] {
     margin: 0.5em;
-    padding: 0.5em;
+    padding: 0.5em 0.0em 0.5em 0.5em;
     text-align: center;
     color: #cccccc;
     background-color: #333333;
@@ -269,7 +277,7 @@ input[type="submit"] {
 
 .slider {
     -webkit-appearance: none;
-    width: 100%;
+    width: 80%;
     height: 25px;
     padding-bottom: 2em;
     border-bottom: 3px solid;
