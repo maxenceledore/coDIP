@@ -279,9 +279,27 @@ input[type="submit"] {
     -webkit-appearance: none;
     width: 80%;
     height: 25px;
-    padding-bottom: 2em;
+    padding-bottom: 1em;
     border-bottom: 3px solid;
+    background: none;
     outline: none;
+}
+
+.slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 1.25em;
+    height: 1.25em;
+    border-radius: 50%;
+    background: #dddddd;
+    cursor: pointer;
+}
+.slider::-moz-range-thumb {
+    width: 1.25em;
+    height: 1.25em;
+    border-radius: 50%;
+    background: #dddddd;
+    cursor: pointer;
 }
 
 img.vue {
