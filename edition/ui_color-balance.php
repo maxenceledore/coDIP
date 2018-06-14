@@ -13,12 +13,24 @@
 <p class="centrage"> Preserve luminosity
 <input type="checkbox" id="preserve-luminosity" checked>
 </p>
+
+<div class="centrage"> 
+<button class="clickable" id="cb_reset_btn"> RESET </button>
+<button class="clickable" id="cb_apply_btn"> APPLY </button>
+</div>
+
 </div>
 
 <script>
     var gm_balance_slider = document.getElementById("balance-magenta2green");
     var by_balance_slider = document.getElementById("balance-yellow2blue");
     var rc_balance_slider = document.getElementById("balance-cyan2red");
+
+    var cb_reset_btn = document.getElementById("cb_reset_btn");
+    cb_reset_btn.onclick = reset_color_balance;
+
+    var cb_apply_btn = document.getElementById("cb_apply_btn");
+    cb_apply_btn.onclick = save_color_balance;
 
     var gm_balance = gm_balance_slider.value;
     var by_balance = by_balance_slider.value;
@@ -52,10 +64,24 @@
       gl.uniform1f(u_cb_gm_coeff, gm_coeff);
       gl.uniform1f(u_cb_by_coeff, by_coeff);
       gl.uniform1f(u_cb_rc_coeff, rc_coeff);
-      gl.uniform1ui(u_command, COLOR_BALANCE);
+      gl.uniform1i(u_command, COLOR_BALANCE);
+      render_2_preview_layer();
       gl.drawArrays(gl.TRIANGLE_STRIP, 0, 4);
+      draw_preview_layer();
     }
     function set_color_balance_preserving_lumi() {
       // TSL based. will be the default option soon.
     }
+    function reset_color_balance() {
+      gm_balance_slider.value = 0;
+      by_balance_slider.value = 0;
+      rc_balance_slider.value = 0;
+      gm_balance = gm_balance_slider.value;
+      by_balance = by_balance_slider.value;
+      rc_balance = rc_balance_slider.value;
+      set_color_balance();
+    }
+    function save_color_balance() {
+      copy_previewFB_2_layer();
+      }
 </script>

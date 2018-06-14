@@ -387,3 +387,16 @@ td.settings-parameters {
     font-size: 1.5em;
 
 }
+
+button {
+    border: 1px solid #888888;
+    margin: 1em;
+    padding-top: 0.25em;
+    padding-bottom: 0.25em;
+    padding-left: 1.25em;
+    padding-right: 1.25em;
+/*  border-radius: 50%; */
+    color: #dddddd;
+    background-color: rgb(48,48,48);
+    cursor: pointer;
+}

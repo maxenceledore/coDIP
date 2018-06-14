@@ -36,7 +36,7 @@ if(isset($_GET['img_id']) && !empty($_GET['img_id'])) {
     <td>
       <p class="centrage gras"> <?php echo $fichier; ?></p>
 
-      <?php include('./edition/codip_states.php'); ?>
+      <?php include('./edition/codip_edit_parameters.php'); ?>
       <?php include('./edition/ui_events_util.php'); ?>
       <?php include('./edition/vs-image-geometry.php'); ?>
       <?php include('./edition/fs-image-color-control.php'); ?>
@@ -57,6 +57,7 @@ if(isset($_GET['img_id']) && !empty($_GET['img_id'])) {
       <?php
         include('./edition/ui_color-balance.php');
         include('./edition/ui_crop.php');
+        include('./edition/ui_flip.php');
         include('./edition/ui_gaussian-blur.php');
         include('./edition/ui_histogram.php');
         include('./edition/ui_layers.php');
