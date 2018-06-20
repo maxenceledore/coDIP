@@ -6,7 +6,7 @@
   echo 'const img_path ='."\"$chemin_img\"".";\n";
 ?>
 
-const VERSION = 'coDIP 0.04';
+const VERSION = 'coDIP 0.05';
 var WebGLversion = 0;
 var ESSL_version_string = "#version ";
 
