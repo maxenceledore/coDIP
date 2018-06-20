@@ -10,6 +10,8 @@ const VERSION = 'coDIP 0.04';
 var WebGLversion = 0;
 var ESSL_version_string = "#version ";
 
+var canvasRenduOpengl = null;
+
 var clicked_pix_x = 0;
 var clicked_pix_y = 0;
 
@@ -33,6 +35,8 @@ var histo_red     = new Float32Array(255);
 var histo_cyan    = new Float32Array(255);
 var histo_yellow  = new Float32Array(255);
 var histo_magenta = new Float32Array(255);
+
+var jpeg_quality;
 
 var program = null;
 var u_command  = null;

@@ -52,7 +52,8 @@ if(isset($_GET['img_id']) && !empty($_GET['img_id'])) {
     </td>
 
     <td class="editing-modules-container centrage">
-
+    <div class="centrage">
+    </div>
 
       <?php
         include('./edition/ui_color-balance.php');
@@ -70,7 +71,17 @@ if(isset($_GET['img_id']) && !empty($_GET['img_id'])) {
         include('./edition/ui_scale.php');
         include('./edition/ui_zoom.php');
       ?>
+      <a href="" class="clickable" id="download-btn"
+      onclick="download_with_last_change()" download> DOWNLOAD </a>
+      <script>
+        function download_with_last_change() {
+          var download_link = document.getElementById("download-btn");
+          const jpeg_snapshot = canvasRenduOpengl.toDataURL("image/jpeg");
 
+          jpeg_snapshot.replace("image/jpeg", "image/octet-stream");
+          download_link.href=jpeg_snapshot;
+        }
+      </script>
     </td>
     </tr></table>
     </div>

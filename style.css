@@ -389,6 +389,7 @@ td.settings-parameters {
 }
 
 button {
+    display: inline;
     border: 1px solid #888888;
     margin: 1em;
     padding-top: 0.25em;

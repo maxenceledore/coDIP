@@ -51,12 +51,14 @@ window.getShaderSource = function(id) {
 
 function create_WebGL_Context(canvas_id) {
 
-    const canvasRenduOpengl = document.querySelector(canvas_id);
+    canvasRenduOpengl = document.querySelector(canvas_id);
 
-    var gl = canvasRenduOpengl.getContext('webgl2', { antialias: false, depth: false });
+    var gl = canvasRenduOpengl.getContext('webgl2', { antialias: false, depth: false,
+                                                      preserveDrawingBuffer: true });
     const isWebGL2 = !!gl;
     if(!isWebGL2) {
-        gl = canvasRenduOpengl.getContext('webgl', { antialias: false, depth: false });
+        gl = canvasRenduOpengl.getContext('webgl', { antialias: false, depth: false,
+                                                     preserveDrawingBuffer: true });
         const isWebGL1 = !!gl;
         if(!isWebGL1) {
             window.alert('coDIP requires at least WebGL 1\n');
