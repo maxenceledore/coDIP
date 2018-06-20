@@ -120,6 +120,7 @@ function create_render_2_layer_FB () {
     render2layerFB = gl.createFramebuffer();
     gl.bindFramebuffer(gl.FRAMEBUFFER, render2layerFB);
     gl.bindFramebuffer(gl.FRAMEBUFFER, null);
+    gl.finish();
 }
 
 function render_2_preview_layer() {
