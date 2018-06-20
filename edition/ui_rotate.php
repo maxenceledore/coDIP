@@ -2,7 +2,7 @@
   <p class="centrage"> <strong> ROTATE </strong> </p>
   <p class="centrage"> Angle </p>
   <input type="range" min="-180" max="180" value="0" class="slider" id="rotation-angle"/>
-  <input type="number" min="-180" max="180" value="0" id="rotation-angle-value"/>
+  <input type="number" min="-180" max="180" value="0" step="0.25" id="rotation-angle-value"/>
 
   <div class="centrage">
   <button class="clickable" id="rotation-reset-btn"> RESET </button>
