@@ -54,8 +54,20 @@
       copy_previewFB_2_layer();
       const edit_mod_saturation = document.getElementById("edit-mod-saturation");
       edit_mod_saturation.style.display = 'none';
+
+      var url ='http://' + window.location.hostname + '/history_update.php';
+      url += '?cmd=saturation';
+      url += '&params=' + satu_value_field.value;
+      url += '&uid=' + 'mledore';
+      url += '&date='+'0';
+
+      const req = new XMLHttpRequest();
+      req.open('GET', url, false);
+      req.send(null);
+
       satu_value_field.value = 0;
       curseur_satu.value     = 0;
+      
       }
   </script>
 </div>
