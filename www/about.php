@@ -19,3 +19,17 @@
 ?>
 
     <?php echo file_get_contents('main-cat.htm'); ?>
+
+    <div class="centrage">
+      <p> This software is licensed under the GNU AGPL v3 terms. </p>
+      <p> Terms of the license are available with the following link :
+      <a href="https://www.gnu.org/licenses/agpl-3.0.en.html" target="blank">
+      GNU AGPL v3 License
+      </a></p>
+      <p> You can get your own copy of the source code by clicking the following link :
+      <a href="https://github.com/maxenceledore/coDIP/commits/master" target="blank">
+      Source code
+      </a>
+      </p>
+      <img src="./img/AGPLv3_Logo_wa.png"/>
+    </div>

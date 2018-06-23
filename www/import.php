@@ -26,7 +26,7 @@ if(isset($_FILES['fichier']) && !empty($_FILES['fichier'])) {
 
    if($_FILES['fichier']['error'] != 0) {
       unset($chemin_upload);
-      header('Location: phototeque.php');
+      header('Location: ./www/phototeque.php');
       }
 
    $nom = substr(md5($_FILES['fichier']['tmp_name']),0,12);
