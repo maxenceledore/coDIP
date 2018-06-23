@@ -52,6 +52,10 @@
       }
     function save_saturation() {
       copy_previewFB_2_layer();
+      const edit_mod_saturation = document.getElementById("edit-mod-saturation");
+      edit_mod_saturation.style.display = 'none';
+      satu_value_field.value = 0;
+      curseur_satu.value     = 0;
       }
   </script>
 </div>
