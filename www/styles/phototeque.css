@@ -3,34 +3,15 @@
 
 }
 
-html {
-   background-color: black;
-}
 
 body {
-   background-color: black;
+   background-color: rgb(224,224,224);
    margin:auto;
 }
 
 .centrage {text-align: center; }
 .gras {font-weight: bold; }
 .sous-lignage {text-decoration: underline; }
-
-
-#login-frame0 {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 100%;
-    min-height: 25%;
-    text-align: center;
-    vertical-align: middle;
-    background-color: black;
-    border-top: solid 0.25em;
-    border-bottom: solid 0.25em;
-    border-image: linear-gradient(to right, #9600ff, #00ff96) 1;
-}
 
 .login-form, .login-photo
 {
@@ -62,6 +43,7 @@ input.login-field {
 
 .main-nav-section {
    margin: 1.0em;
+   color: black;
 }
 
 .menu-edit-bar-lv0 {
@@ -80,26 +62,6 @@ input.login-field {
     text-align: left;
 }
 
-.edit-bar-lv0-section, .edit-bar-lv1-section {
-   display: inline;
-   margin: 1.0em;
-   padding: 0.3em;
-   font-size: 1.5vh;
-   color: #dddddd;
-   text-align: left;
-   font-weight: bold;
-   cursor: pointer;
-}
-
-.edit-bar-lv0-section-highlight {
-    color: black;
-    background-color: white;
-}
-
-.edit-bar-lv1-section {
-   font-weight: normal;
-}
-
 #feet {
     position:absolute;
     bottom: 0;
@@ -112,7 +74,9 @@ input.login-field {
 #cadre-gallerie {
    margin-left: auto;
    margin-right: auto;
-   background-color: #222222;
+   padding-top: 1em;
+   padding-bottom: 1em;
+   background-color: rgb(240,240,240);
    text-align: center;
    border: solid #444444;
    border-width: 0em 0em 0.1em 0em;
@@ -121,15 +85,15 @@ input.login-field {
 #import-et-retour {
    margin-left: auto;
    margin-right: auto;
-   background-color: #222222;
+   padding-top: 1em;
+   padding-bottom: 1em;
+   background-color: rgb(192,192,192);
    text-align: right;
-   border: solid #444444;
-   border-width: 0.1em 0em;
 }
 
 h1, h2, h3 {
    font-weight: lighter;
-   color: #dddddd;
+   color: rgb(32,32,32);
 }
 h1 { font-size: 2.5vw }
 h2 { font-size: 2.0vw }
@@ -157,7 +121,7 @@ a.bouton {
 p {
     font-size: 1.5vh;
     padding: 0.3em;
-    color: #dddddd;
+    color: red;
     text-align: left;
 }
 
@@ -168,15 +132,6 @@ table {
    margin-right: auto;
    table-layout: fixed;
    max-width: 85%;
-}
-
-#editing-frame {
-   margin-left: auto;
-   margin-right: auto;
-   background-color: rgb(16,16,16);
-   text-align: center;
-   border: solid #444444;
-   border-width: 0em 0em 0.1em 0em;
 }
 
 th {
@@ -197,52 +152,11 @@ td.vue_infos {
     height: 75vh;
 }
 
-td.editing-modules-container {
-    vertical-align: top;
-    max-width: 25%;
-    height: 75vh;
-}
-
-.edit-module {
-    margin-top: 1em;
-    margin-bottom: 1em;
-    padding-top: 1em;
-    padding-bottom: 2em;
-    border-radius: 2.5%;
-    background-color: rgb(48,48,48);
-}
-
 img.vue {
     display: block;
     margin: auto;
     height: auto;
     width:  auto;
-}
-
-#gl-edit-render {
-    width: 100%;
-}
-
-#niveaux-courbe {
-    display: block;
-    margin: auto;
-    height: auto;
-    width:  90%;
-    max-height: 100%;
-    max-width:  100%;
-    background-color: #333333;
-    border: solid 1px grey;
-}
-
-#histogram {
-    display: block;
-    margin: auto;
-    height: auto;
-    width:  90%;
-    max-height: 100%;
-    max-width:  100%;
-    background-color: #333333;
-    border: solid 1px grey;
 }
 
 hr {
@@ -251,59 +165,18 @@ hr {
     border: 0em;
 }
 
-form {
-    border: solid 0.25em;
-}
-
 input[type="file"] {
-    color: #cccccc;
-    background-color: #333333;
-    border: 1px solid;
-    border-color: grey;
-}
-
-input[type="number"] {
-    margin: 0.5em;
-    padding: 0.5em 0.0em 0.5em 0.5em;
-    text-align: center;
-    color: #cccccc;
-    background-color: #333333;
+    color: black;
+    background-color: white;
     border: 1px solid;
     border-color: grey;
 }
 
 input[type="submit"] {
     color: #cccccc;
-    background-color: #333333;
-    border: 1px solid;
-    border-color: grey;
-}
-
-.slider {
-    -webkit-appearance: none;
-    width: 80%;
-    height: 25px;
-    padding-bottom: 1em;
-    border-bottom: 3px solid;
-    background: none;
-    outline: none;
-}
-
-.slider::-webkit-slider-thumb {
-    -webkit-appearance: none;
-    appearance: none;
-    width: 1.25em;
-    height: 1.25em;
-    border-radius: 50%;
-    background: #dddddd;
-    cursor: pointer;
-}
-.slider::-moz-range-thumb {
-    width: 1.25em;
-    height: 1.25em;
-    border-radius: 50%;
-    background: #dddddd;
-    cursor: pointer;
+    background-color: rgb(240,240,240);
+    border: 1px solid ;
+    border-color: rgb(192,192,192);
 }
 
 img.vue {
@@ -313,36 +186,6 @@ img.vue {
     width:  auto;
     max-height: 100%;
     max-width:  100%;
-}
-
-.b2w-hori {
-    border-image: linear-gradient(to right, black, white) 1;
-}
-
-.b2w-vert {
-    background: linear-gradient(to top, rgba(0,0,0,1), rgba(255,255,255,1));
-}
-
-.b2r-hori {
-    border-image: linear-gradient(to right, black, red) 1;
-}
-
-.b2g-hori {
-    border-image: linear-gradient(to right, black, green) 1;
-}
-
-.b2blue-hori {
-    border-image: linear-gradient(to right, black, blue) 1;
-}
-
-.magenta2green {
-    border-image: linear-gradient(to right, rgb(255,0,255), green) 1;
-}
-.yellow2blue {
-    border-image: linear-gradient(to right, rgb(255,255,0), blue) 1;
-}
-.cyan2red {
-    border-image: linear-gradient(to right, rgb(0,255,255), red) 1;
 }
 
 .dot-small {
@@ -352,15 +195,6 @@ img.vue {
     border-radius: 1.0vh;
     margin: 2.0vh;
 }
-
-.bg-black   {background-color: black; }
-.bg-white   {background-color: white; }
-.bg-red     {background-color: red;   }
-.bg-green   {background-color: green; }
-.bg-blue    {background-color: blue;  }
-.bg-cyan    {background-color: cyan;  }
-.bg-yellow  {background-color: yellow;}
-.bg-magenta {background-color: rgb(255,0,255);}
 
 /* Settings */
 table.settings {
