@@ -10,6 +10,8 @@ const VERSION = 'coDIP 0.05';
 var WebGLversion = 0;
 var ESSL_version_string = "#version ";
 
+screen.orientation.lock('landscape');
+
 var canvasRenduOpengl = null;
 
 var clicked_pix_x = 0;
