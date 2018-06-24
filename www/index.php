@@ -24,7 +24,30 @@ echo file_get_contents("./disclaimer_notice.html");
 
 <html>
   <head>
-    <link rel="stylesheet" type="text/css" href="style.css">
+  <?php
+  $default_style = '<link rel="stylesheet" type="text/css" href="styles/style.css">';
+  $phototeque_style = '<link rel="stylesheet" type="text/css" href="styles/phototeque.css">';
+  $edition_style = '<link rel="stylesheet" type="text/css" href="styles/edition.css">';
+          if(isset($_GET['page']))
+            switch($_GET['page']) {
+            case 'about':
+            case 'help':
+            case 'vue':
+              echo $default_style;
+              break;
+            case 'phototeque':
+              echo $phototeque_style;
+              break;
+            case 'edition':
+            case 'settings':
+              echo $edition_style;
+              break;
+            default:
+              echo $default_style;
+              }
+           else
+             echo $default_style;
+  ?>
   </head>
   <body>
   <?php
