@@ -52,8 +52,6 @@ if(isset($_GET['img_id']) && !empty($_GET['img_id'])) {
     </td>
 
     <td class="editing-modules-container centrage">
-    <div class="centrage">
-    </div>
 
       <?php
         include('./edition/ui_color-balance.php');
